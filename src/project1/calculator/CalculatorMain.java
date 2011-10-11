@@ -11,26 +11,17 @@ public class CalculatorMain {
 
 		JFrame calculatorFrame = new JFrame("Calculator");
 		
-		MenuBar menuBar = new MenuBar();
-		Menu edit = new Menu("Edit", true);
-		Menu about = new Menu("About", true);
-		Menu help = new Menu("Help", true);
-		
+	
 		calculatorFrame.setSize(450,390);
 		calculatorFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		calculatorFrame.setResizable(false);
 		
-		CalculatorButtons c = new CalculatorButtons();
+		CalculatorButtons cb = new CalculatorButtons();
+		cb.addButtons(calculatorFrame);
+
+		CalculatorMenus cm = new CalculatorMenus();
+		cm.addMenus(calculatorFrame);
 		
-		edit.add("Whaat");
-		edit.add("Papoi");
-		about.add("I'm having a bad bad day- Despicable me");
-		
-		menuBar.add(edit);
-		menuBar.add(about);
-		menuBar.add(help);
-		calculatorFrame.setMenuBar(menuBar);
-		c.addButtons(calculatorFrame);
 		
 		//calculatorFrame.pack();
 		
