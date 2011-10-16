@@ -11,38 +11,38 @@ import javax.swing.*;
 
 public class CalculatorButtons implements ActionListener{
 
-	public static JButton button0 = new JButton("0");
-	public static JButton button1 = new JButton("1");
-	public static JButton button2 = new JButton("2");
-	public static JButton button3 = new JButton("3");
-	public static JButton button4 = new JButton("4");
-	public static JButton button5 = new JButton("5");
-	public static JButton button6 = new JButton("6");
-	public static JButton button7 = new JButton("7");
-	public static JButton button8 = new JButton("8");
+	public JButton button0 = new JButton("0");
+	public JButton button1 = new JButton("1");
+	public JButton button2 = new JButton("2");
+	public JButton button3 = new JButton("3");
+	public JButton button4 = new JButton("4");
+	public JButton button5 = new JButton("5");
+	public JButton button6 = new JButton("6");
+	public JButton button7 = new JButton("7");
+	public JButton button8 = new JButton("8");
 	public JButton button9 = new JButton("9");
 	
-	public static JButton buttonClear = new JButton("C");
-	public static JButton buttonCE = new JButton("CE");
-	public static JButton buttonBackSpace = new JButton("Backspace");
+	public JButton buttonClear = new JButton("C");
+	public JButton buttonCE = new JButton("CE");
+	public JButton buttonBackSpace = new JButton("Backspace");
 	
-	public static JButton plusSlashMinus = new JButton("+/-");
-	public static JButton sqrt = new JButton("sqrt");
-	public static JButton plus = new JButton("+");
-	public static JButton minus = new JButton("-");
-	public static JButton multiplication = new JButton("*");
-	public static JButton division = new JButton("/");
-	public static JButton inverse = new JButton("1/x");
-	public static JButton equals = new JButton("=");
-	public static JButton percentage = new JButton("%");
-	public static JButton dot = new JButton(".");
+	public JButton plusSlashMinus = new JButton("+/-");
+	public JButton sqrt = new JButton("sqrt");
+	public JButton plus = new JButton("+");
+	public JButton minus = new JButton("-");
+	public JButton multiplication = new JButton("*");
+	public JButton division = new JButton("/");
+	public JButton inverse = new JButton("1/x");
+	public JButton equals = new JButton("=");
+	public JButton percentage = new JButton("%");
+	public JButton dot = new JButton(".");
 	
-	public static JButton mc = new JButton("MC");
-	public static JButton mr = new JButton("MR");
-	public static JButton ms = new JButton("MS");
-	public static JButton mplus = new JButton("M+");
+	public JButton mc = new JButton("MC");
+	public JButton mr = new JButton("MR");
+	public JButton ms = new JButton("MS");
+	public JButton mplus = new JButton("M+");
 	
-	public static JTextField textField = new JTextField(25);
+	public JTextField textField = new JTextField(25);
 	
 	
 	/**
@@ -66,8 +66,6 @@ public class CalculatorButtons implements ActionListener{
 		
 		mc.setPreferredSize(buttonSize);
 		button9.setPreferredSize(buttonSize);
-		button9.addActionListener(this);
-		button9.setForeground(Color.blue);
 		button8.setPreferredSize(buttonSize);
 		button7.setPreferredSize(buttonSize);
 		division.setPreferredSize(buttonSize);
@@ -142,16 +140,41 @@ public class CalculatorButtons implements ActionListener{
 		textPanelPlusButtons.add(numberGrid4);
 		textPanelPlusButtons.add(Box.createRigidArea(new Dimension(0,20)));
 		
+		
+		button8.addActionListener(this);
+		button9.addActionListener(this);
+		button9.setForeground(Color.blue);
+		equals.addActionListener(this);
+		buttonClear.addActionListener(this);
+		textField.setEditable(false);
+		textField.setHorizontalAlignment(JTextField.RIGHT);
+		
 		frame.getContentPane().add(textPanelPlusButtons);
 	}
 
 
 	public void actionPerformed(ActionEvent e) {
-		if(e.getSource() == button9)
+		
+		if(e.getSource() == button8)
 		{
-			System.out.println("Je");
-			System.out.println("jajajaj");
+			textField.setText(textField.getText()+"8");
 		}
+		
+		else if(e.getSource() == button9)
+		{
+			textField.setText(textField.getText()+"9");
+		}
+		
+		else if(e.getSource() == equals)
+		{
+			textField.setText("Yes");
+		}
+		
+		else if(e.getSource() == buttonClear )
+		{
+			textField.setText("");
+		}
+		
 		
 	}
 
