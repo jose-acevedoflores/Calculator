@@ -17,7 +17,7 @@ import javax.swing.*;
 public class CalculatorButtonsV01 implements ActionListener {
 	
 	private JButton[] buttons = new JButton[27];
-	private JTextField txtField = new JTextField(27);
+	private JTextField txtField = new JTextField(36);
 	private CalculatorFunctions calcFun;
 	
 	public CalculatorButtonsV01(CalculatorFunctions f)
@@ -47,10 +47,10 @@ public class CalculatorButtonsV01 implements ActionListener {
 	 */
 	public void addGUIToFrame(JFrame frame)
 	{
-		Dimension buttonSize = new Dimension(50,50);
-		buttons[24].setPreferredSize(new Dimension(86,40));
-		buttons[25].setPreferredSize(new Dimension(86,40));
-		buttons[26].setPreferredSize(new Dimension(86,40));
+		Dimension buttonSize = new Dimension(60,60);
+		buttons[24].setPreferredSize(new Dimension(103,50));
+		buttons[25].setPreferredSize(new Dimension(103,50));
+		buttons[26].setPreferredSize(new Dimension(103,50));
 		
 		for(int i = 0 ; i < 24; i++)
 		{
@@ -63,7 +63,7 @@ public class CalculatorButtonsV01 implements ActionListener {
 		JPanel numberGrid4 = new JPanel(new FlowLayout());
 		JPanel clearButtonsRow = new JPanel(new FlowLayout());
 		
-		clearButtonsRow.add(Box.createRigidArea(new Dimension(60,0)));//Empty area to make the backspace button move to the right. 
+		clearButtonsRow.add(Box.createRigidArea(new Dimension(70,0)));//Empty area to make the backspace button move to the right. 
 		clearButtonsRow.add(buttons[24]);
 		clearButtonsRow.add(buttons[25]);
 		clearButtonsRow.add(buttons[26]);

@@ -11,7 +11,7 @@ public class CalculatorMainV01 {
 	public static void main(String[] args) {
 		
 		JFrame frame = new JFrame("Calculator");
-		frame.setSize(new Dimension(384,364));
+		frame.setSize(new Dimension(454,460));
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.setResizable(false);
 		
