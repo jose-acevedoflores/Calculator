@@ -39,6 +39,7 @@ public class CalculatorButtonsV01 implements ActionListener {
 		txtField.setMaximumSize(txtField.getPreferredSize());
 		txtField.setEditable(false);
 		txtField.setHorizontalAlignment(JTextField.RIGHT);
+		txtField.setText("0");
 	}
 	
 	/**
@@ -127,27 +128,42 @@ public class CalculatorButtonsV01 implements ActionListener {
 	public void actionPerformed(ActionEvent e) {
 		if(e.getSource() == buttons[0])
 		{
-			txtField.setText(txtField.getText()+"0");
+			if(txtField.getText().length() == 1 && txtField.getText().charAt(0)=='0')
+				txtField.setText("0");
+			else
+				txtField.setText(txtField.getText()+"0");
 		}
 		
 		else if(e.getSource() == buttons[1])
 		{
-			txtField.setText(txtField.getText()+"1");
+			if(txtField.getText().length() == 1 && txtField.getText().charAt(0)=='0')
+				txtField.setText("1");
+			else
+				txtField.setText(txtField.getText()+"1");
 		}
 		
 		else if(e.getSource() == buttons[2])
 		{
-			txtField.setText(txtField.getText()+"2");
+			if(txtField.getText().length() == 1 && txtField.getText().charAt(0)=='0')
+				txtField.setText("2");
+			else
+				txtField.setText(txtField.getText()+"2");
 		}
 		
 		else if(e.getSource() == buttons[3])
 		{
-			txtField.setText(txtField.getText()+"3");
+			if(txtField.getText().length() == 1 && txtField.getText().charAt(0)=='0')
+				txtField.setText("3");
+			else
+				txtField.setText(txtField.getText()+"3");
 		}
 		
 		else if(e.getSource() == buttons[4])
 		{
-			txtField.setText(txtField.getText()+"4");
+			if(txtField.getText().length() == 1 && txtField.getText().charAt(0)=='0')
+				txtField.setText("4");
+			else
+				txtField.setText(txtField.getText()+"4");
 		}
 		
 		// Square root
@@ -160,16 +176,20 @@ public class CalculatorButtonsV01 implements ActionListener {
 		//Backspace
 		else if(e.getSource() == buttons[24]) 
 		{
-			if(txtField.getText().length() != 0)
+			if(txtField.getText().length() == 1)
+				txtField.setText("0");
+			else//(txtField.getText().length() != 0)
 			{
 				String currentlyInTextField = txtField.getText(); 
 				txtField.setText(currentlyInTextField.substring(0, currentlyInTextField.length()-1));
 			}
+			
 		}
 		
+		//Clear button
 		else if(e.getSource() == buttons[26])
 		{
-			txtField.setText("");
+			txtField.setText("0");
 		}
 		
 	}
