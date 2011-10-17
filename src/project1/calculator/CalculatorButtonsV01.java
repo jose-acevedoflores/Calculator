@@ -130,6 +130,7 @@ public class CalculatorButtonsV01 implements ActionListener, KeyListener {
 	 * Calls the appropriate CalculatorFunctions based on the input. 
 	 */
 	public void actionPerformed(ActionEvent e) {
+		//Number 0
 		if(e.getSource() == buttons[0])
 		{
 			if(txtField.getText().length() == 1 && txtField.getText().charAt(0)=='0')
@@ -138,6 +139,7 @@ public class CalculatorButtonsV01 implements ActionListener, KeyListener {
 				txtField.setText(txtField.getText()+"0");
 		}
 		
+		//Number 1
 		else if(e.getSource() == buttons[1])
 		{
 			if(txtField.getText().length() == 1 && txtField.getText().charAt(0)=='0')
@@ -146,6 +148,7 @@ public class CalculatorButtonsV01 implements ActionListener, KeyListener {
 				txtField.setText(txtField.getText()+"1");
 		}
 		
+		//Number 2
 		else if(e.getSource() == buttons[2])
 		{
 			if(txtField.getText().length() == 1 && txtField.getText().charAt(0)=='0')
@@ -154,6 +157,7 @@ public class CalculatorButtonsV01 implements ActionListener, KeyListener {
 				txtField.setText(txtField.getText()+"2");
 		}
 		
+		//Number 3
 		else if(e.getSource() == buttons[3])
 		{
 			if(txtField.getText().length() == 1 && txtField.getText().charAt(0)=='0')
@@ -162,6 +166,7 @@ public class CalculatorButtonsV01 implements ActionListener, KeyListener {
 				txtField.setText(txtField.getText()+"3");
 		}
 		
+		//Number 4
 		else if(e.getSource() == buttons[4])
 		{
 			if(txtField.getText().length() == 1 && txtField.getText().charAt(0)=='0')
@@ -169,6 +174,52 @@ public class CalculatorButtonsV01 implements ActionListener, KeyListener {
 			else
 				txtField.setText(txtField.getText()+"4");
 		}
+		
+		//Number 5
+		else if(e.getSource() == buttons[5])
+		{
+			if(txtField.getText().length() == 1 && txtField.getText().charAt(0)=='0')
+				txtField.setText("5");
+			else
+				txtField.setText(txtField.getText()+"5");
+		}
+		
+		//Number 6
+		else if(e.getSource() == buttons[6])
+		{
+			if(txtField.getText().length() == 1 && txtField.getText().charAt(0)=='0')
+				txtField.setText("6");
+			else
+				txtField.setText(txtField.getText()+"6");
+		}
+		
+		//Number 7
+		else if(e.getSource() == buttons[7])
+		{
+			if(txtField.getText().length() == 1 && txtField.getText().charAt(0)=='0')
+				txtField.setText("7");
+			else
+				txtField.setText(txtField.getText()+"7");
+		}
+		
+		//Number 8
+		else if(e.getSource() == buttons[8])
+		{
+			if(txtField.getText().length() == 1 && txtField.getText().charAt(0)=='0')
+				txtField.setText("8");
+			else
+				txtField.setText(txtField.getText()+"8");
+		}
+		
+		//Number 9
+		else if(e.getSource() == buttons[9])
+		{
+			if(txtField.getText().length() == 1 && txtField.getText().charAt(0)=='0')
+				txtField.setText("9");
+			else
+				txtField.setText(txtField.getText()+"9");
+		}
+		
 		
 		// Square root
 		else if(e.getSource() == buttons[14])
@@ -188,6 +239,12 @@ public class CalculatorButtonsV01 implements ActionListener, KeyListener {
 				txtField.setText(currentlyInTextField.substring(0, currentlyInTextField.length()-1));
 			}
 			
+		}
+		
+		//Clear E button
+		else if(e.getSource() == buttons[25])
+		{
+				txtField.setText("0");
 		}
 		
 		//Clear button
