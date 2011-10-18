@@ -6,7 +6,7 @@ public class CalculatorFunctions {
 	private String secondInput;
 	private String operator;
 	private String result;
-	private String lastPressedButton;
+	private String lastPressedButton="0";
 
 	/**
 	 * Computes the square root of the given number.
@@ -61,7 +61,8 @@ public class CalculatorFunctions {
 	}
 
 	/**
-	 *
+	 *Computes the result of the number in memory and the number in the current number in the display.
+	 *The operator used will be the last one that was pressed.
 	 * @return 
 	 */
 	public String getResult(String currentNumberInDisplay)
@@ -96,6 +97,15 @@ public class CalculatorFunctions {
 	public String getSecondInput()
 	{
 		return secondInput;
+	}
+
+	/**
+	 * 
+	 * @return
+	 */
+	public String getOperator()
+	{
+		return operator;
 	}
 
 	/**

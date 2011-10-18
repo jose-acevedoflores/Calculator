@@ -134,7 +134,8 @@ public class CalculatorButtonsV01 implements ActionListener, KeyListener {
 		if(e.getSource() == buttons[0])
 		{
 			if(txtField.getText().length() == 1 && txtField.getText().charAt(0)=='0' 
-					|| calcFunctions.getLastPressedButton().equals("sqrt") || calcFunctions.getLastPressedButton().equals("+"))
+					|| calcFunctions.getLastPressedButton().equals("sqrt") || calcFunctions.getLastPressedButton().equals("+")
+					|| calcFunctions.getLastPressedButton().equals("="))
 				txtField.setText("0");
 			else
 				txtField.setText(txtField.getText()+"0");
@@ -145,7 +146,8 @@ public class CalculatorButtonsV01 implements ActionListener, KeyListener {
 		else if(e.getSource() == buttons[1])
 		{
 			if(txtField.getText().length() == 1 && txtField.getText().charAt(0)=='0'
-					|| calcFunctions.getLastPressedButton().equals("sqrt") || calcFunctions.getLastPressedButton().equals("+"))
+					|| calcFunctions.getLastPressedButton().equals("sqrt") || calcFunctions.getLastPressedButton().equals("+")
+					|| calcFunctions.getLastPressedButton().equals("="))
 				txtField.setText("1");
 			else
 				txtField.setText(txtField.getText()+"1");
@@ -156,7 +158,8 @@ public class CalculatorButtonsV01 implements ActionListener, KeyListener {
 		else if(e.getSource() == buttons[2])
 		{
 			if(txtField.getText().length() == 1 && txtField.getText().charAt(0)=='0'
-					|| calcFunctions.getLastPressedButton().equals("sqrt") || calcFunctions.getLastPressedButton().equals("+"))
+					|| calcFunctions.getLastPressedButton().equals("sqrt") || calcFunctions.getLastPressedButton().equals("+")
+					|| calcFunctions.getLastPressedButton().equals("="))
 				txtField.setText("2");
 			else
 				txtField.setText(txtField.getText()+"2");
@@ -167,7 +170,8 @@ public class CalculatorButtonsV01 implements ActionListener, KeyListener {
 		else if(e.getSource() == buttons[3])
 		{
 			if(txtField.getText().length() == 1 && txtField.getText().charAt(0)=='0'
-					|| calcFunctions.getLastPressedButton().equals("sqrt") || calcFunctions.getLastPressedButton().equals("+"))
+					|| calcFunctions.getLastPressedButton().equals("sqrt") || calcFunctions.getLastPressedButton().equals("+")
+					|| calcFunctions.getLastPressedButton().equals("="))
 				txtField.setText("3");
 			else
 				txtField.setText(txtField.getText()+"3");
@@ -178,7 +182,8 @@ public class CalculatorButtonsV01 implements ActionListener, KeyListener {
 		else if(e.getSource() == buttons[4])
 		{
 			if(txtField.getText().length() == 1 && txtField.getText().charAt(0)=='0'
-					|| calcFunctions.getLastPressedButton().equals("sqrt") || calcFunctions.getLastPressedButton().equals("+"))
+					|| calcFunctions.getLastPressedButton().equals("sqrt") || calcFunctions.getLastPressedButton().equals("+")
+					|| calcFunctions.getLastPressedButton().equals("="))
 				txtField.setText("4");
 			else
 				txtField.setText(txtField.getText()+"4");
@@ -189,7 +194,8 @@ public class CalculatorButtonsV01 implements ActionListener, KeyListener {
 		else if(e.getSource() == buttons[5])
 		{
 			if(txtField.getText().length() == 1 && txtField.getText().charAt(0)=='0'
-					|| calcFunctions.getLastPressedButton().equals("sqrt") || calcFunctions.getLastPressedButton().equals("+") )
+					|| calcFunctions.getLastPressedButton().equals("sqrt") || calcFunctions.getLastPressedButton().equals("+") 
+					|| calcFunctions.getLastPressedButton().equals("="))
 				txtField.setText("5");
 			else
 				txtField.setText(txtField.getText()+"5");
@@ -200,7 +206,8 @@ public class CalculatorButtonsV01 implements ActionListener, KeyListener {
 		else if(e.getSource() == buttons[6])
 		{
 			if(txtField.getText().length() == 1 && txtField.getText().charAt(0)=='0'
-					|| calcFunctions.getLastPressedButton().equals("sqrt")|| calcFunctions.getLastPressedButton().equals("+"))
+					|| calcFunctions.getLastPressedButton().equals("sqrt")|| calcFunctions.getLastPressedButton().equals("+")
+					|| calcFunctions.getLastPressedButton().equals("="))
 				txtField.setText("6");
 			else
 				txtField.setText(txtField.getText()+"6");
@@ -211,7 +218,8 @@ public class CalculatorButtonsV01 implements ActionListener, KeyListener {
 		else if(e.getSource() == buttons[7])
 		{
 			if(txtField.getText().length() == 1 && txtField.getText().charAt(0)=='0'
-					|| calcFunctions.getLastPressedButton().equals("sqrt") || calcFunctions.getLastPressedButton().equals("+"))
+					|| calcFunctions.getLastPressedButton().equals("sqrt") || calcFunctions.getLastPressedButton().equals("+")
+					|| calcFunctions.getLastPressedButton().equals("="))
 				txtField.setText("7");
 			else
 				txtField.setText(txtField.getText()+"7");
@@ -222,7 +230,8 @@ public class CalculatorButtonsV01 implements ActionListener, KeyListener {
 		else if(e.getSource() == buttons[8])
 		{
 			if(txtField.getText().length() == 1 && txtField.getText().charAt(0)=='0'
-					|| calcFunctions.getLastPressedButton().equals("sqrt") || calcFunctions.getLastPressedButton().equals("+"))
+					|| calcFunctions.getLastPressedButton().equals("sqrt") || calcFunctions.getLastPressedButton().equals("+")
+					|| calcFunctions.getLastPressedButton().equals("="))
 				txtField.setText("8");
 			else
 				txtField.setText(txtField.getText()+"8");
@@ -233,7 +242,8 @@ public class CalculatorButtonsV01 implements ActionListener, KeyListener {
 		else if(e.getSource() == buttons[9])
 		{
 			if(txtField.getText().length() == 1 && txtField.getText().charAt(0)=='0'
-					|| calcFunctions.getLastPressedButton().equals("sqrt") || calcFunctions.getLastPressedButton().equals("+"))
+					|| calcFunctions.getLastPressedButton().equals("sqrt") || calcFunctions.getLastPressedButton().equals("+")
+					|| calcFunctions.getLastPressedButton().equals("="))
 				txtField.setText("9");
 			else
 				txtField.setText(txtField.getText()+"9");
@@ -254,7 +264,7 @@ public class CalculatorButtonsV01 implements ActionListener, KeyListener {
 		// + button
 		else if(e.getSource() == buttons[16])
 		{
-			//if(!calcFunctions.getLastPressedButton().equals("+"))
+			if(!calcFunctions.getLastPressedButton().equals("+"))
 				calcFunctions.sumPressed(txtField.getText());
 			calcFunctions.setLastPressedButton("+");
 		}
@@ -264,7 +274,8 @@ public class CalculatorButtonsV01 implements ActionListener, KeyListener {
 		{
 			if(calcFunctions.getLastPressedButton().equals("="))
 				txtField.setText(calcFunctions.getResult(calcFunctions.getSecondInput()));
-			else
+			
+			else 
 			{
 				calcFunctions.setLastPressedButton("=");
 				txtField.setText(calcFunctions.getResult(txtField.getText()));
@@ -274,7 +285,7 @@ public class CalculatorButtonsV01 implements ActionListener, KeyListener {
 		//Backspace
 		else if(e.getSource() == buttons[24]) 
 		{
-			if(calcFunctions.getLastPressedButton().equals("sqrt"))
+			if(calcFunctions.getLastPressedButton().equals("sqrt") || calcFunctions.getLastPressedButton().equals("="))
 			{//Do nothing
 				
 			}
