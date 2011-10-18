@@ -262,7 +262,7 @@ public class CalculatorButtonsV01 implements ActionListener, KeyListener {
 		
 	}
 
-
+	
 	public void keyPressed(KeyEvent arg0) 
 	{
 		if(arg0.getKeyCode() == KeyEvent.VK_0)
@@ -273,6 +273,46 @@ public class CalculatorButtonsV01 implements ActionListener, KeyListener {
 		else if(arg0.getKeyCode() == KeyEvent.VK_1)
 		{
 			buttons[1].doClick();
+		}
+		
+		else if(arg0.getKeyCode() == KeyEvent.VK_2)
+		{
+			buttons[2].doClick();
+		}
+		
+		else if(arg0.getKeyCode() == KeyEvent.VK_3)
+		{
+			buttons[3].doClick();
+		}
+		
+		else if(arg0.getKeyCode() == KeyEvent.VK_4)
+		{
+			buttons[4].doClick();
+		}
+		
+		else if(arg0.getKeyCode() == KeyEvent.VK_5)
+		{
+			buttons[5].doClick();
+		}
+		
+		else if(arg0.getKeyCode() == KeyEvent.VK_6)
+		{
+			buttons[6].doClick();
+		}
+		
+		else if(arg0.getKeyCode() == KeyEvent.VK_7)
+		{
+			buttons[7].doClick();
+		}
+		
+		else if(arg0.getKeyCode() == KeyEvent.VK_8)
+		{
+			buttons[8].doClick();
+		}
+		
+		else if(arg0.getKeyCode() == KeyEvent.VK_9)
+		{
+			buttons[9].doClick();
 		}
 	}
 
