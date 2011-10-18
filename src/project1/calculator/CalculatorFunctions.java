@@ -62,19 +62,17 @@ public class CalculatorFunctions {
 
 	/**
 	 *
-	 * @return
+	 * @return 
 	 */
 	public String getResult(String currentNumberInDisplay)
 	{
 
-		if(operator.equals("+") && !lastPressedButton.equals("="))
+
+		if(operator.equals("+") && lastPressedButton.equals("="))
 		{
 			secondInput = currentNumberInDisplay;
-			this.sumPressed(secondInput);
-		}
-		else if(operator.equals("+") && lastPressedButton.equals("="))
-		{
 			result = String.valueOf(Double.parseDouble(result) + Double.parseDouble(secondInput));
+			System.out.println("orly");
 			firstInput = "0";
 		}
 
@@ -89,6 +87,15 @@ public class CalculatorFunctions {
 	public String getFirstInput()
 	{
 		return firstInput;
+	}
+	
+	/**
+	 * 
+	 * @return
+	 */
+	public String getSecondInput()
+	{
+		return secondInput;
 	}
 
 	/**
