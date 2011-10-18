@@ -76,6 +76,14 @@ public class CalculatorFunctions {
 			System.out.println("orly");
 			firstInput = "0";
 		}
+		
+		else if(operator.equals("-") && lastPressedButton.equals("="))
+		{
+			secondInput = currentNumberInDisplay;
+			result = String.valueOf(Double.parseDouble(result) - Double.parseDouble(secondInput));
+			System.out.println("orly2");
+			firstInput = "0";
+		}
 
 
 		return result;
@@ -137,11 +145,13 @@ public class CalculatorFunctions {
 	/**
 	 *Subtraction Prototype
 	 */
-	/*public String subtraction(){
-		double subtraction = Double.parseDouble(firstInput) - Double.parseDouble(secondInput);
-
-		return Double.toString(subtraction);
-	}*/
+	public void subtractionPress(String currentNumberInDisplay){
+		operator = "-";
+		double currentInput = Double.parseDouble(currentNumberInDisplay);
+		double resultDouble = currentInput - Double.parseDouble(firstInput);
+		result = String.valueOf(resultDouble);
+		firstInput = result;
+	}
 
 	/**
 	 * Multiplication Prototype
