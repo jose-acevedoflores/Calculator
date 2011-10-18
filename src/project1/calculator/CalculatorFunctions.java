@@ -3,7 +3,7 @@ package project1.calculator;
 public class CalculatorFunctions {
 
 	private String firstInput="0";
-	private String secondInput="0";
+	private String secondInput;
 	private String operator="0";
 	private String result="0";
 	private String lastPressedButton="0";
@@ -14,7 +14,7 @@ public class CalculatorFunctions {
 	 * @return the square root.
 	 */
 	public String sqrt(String num)
-	{
+	{ 
 		return Double.toString(Math.sqrt(Double.parseDouble(num)));
 	}
 
@@ -53,15 +53,33 @@ public class CalculatorFunctions {
 	 */
 	public void sumPressed(String currentNumberInDisplay)
 	{
+		
+		double currentInput;
+		
+	
+	/*	//If the last operator pressed was the sum then we need to compute the previous operator in order to then calculate this one.
+		if(operator.equals("-")&& !lastPressedButton.equals("=")) 
+		{
+			firstInput = this.getResult(currentNumberInDisplay);
+			currentInput = 0;
+		}*/
+		
+		if(firstInput.equals("0")) //This is useless but for ease of reading it's here
+		{	
+			firstInput = currentNumberInDisplay;
+			currentInput = 0;
+		}
+		else 
+			currentInput = Double.parseDouble(currentNumberInDisplay);
+		
 		operator = "+";
-		double currentInput = Double.parseDouble(currentNumberInDisplay);
 		double resultDouble = Double.parseDouble(firstInput) + currentInput;
 		result = String.valueOf(resultDouble);
 		firstInput = result;
 	}
 
 	/**
-	 *Computes the result of the number in memory and the number in the current number in the display.
+	 *Computes the result of the number in memory and the number that is currently in the display.
 	 *The operator used will be the last one that was pressed.
 	 * @return 
 	 */
@@ -69,20 +87,19 @@ public class CalculatorFunctions {
 	{
 
 
-		if(operator.equals("+") && lastPressedButton.equals("="))
+		if(operator.equals("+") )//&& lastPressedButton.equals("="))
 		{
+			
 			secondInput = currentNumberInDisplay;
 			result = String.valueOf(Double.parseDouble(result) + Double.parseDouble(secondInput));
-			System.out.println("orly");
-			firstInput = "0";
+			System.out.println("in plus "+result);
 		}
 		
-		else if(operator.equals("-") && lastPressedButton.equals("="))
+		else if(operator.equals("-") )//&& lastPressedButton.equals("="))
 		{
 			secondInput = currentNumberInDisplay;
 			result = String.valueOf(Double.parseDouble(result) - Double.parseDouble(secondInput));
-			System.out.println("orly2");
-			firstInput = "0";
+			System.out.println("in minus "+result);
 		}
 
 
@@ -140,15 +157,51 @@ public class CalculatorFunctions {
 		operator = "0";
 	}
 	
+	public void resetResult()
+	{
+		result = "0";
+	}
 	
+	public void setOperator(String op)
+	{
+		operator =op;
+	}
+	
+	public void setFirstInput(String temp)
+	{
+		firstInput = temp;
+	}
+	
+	public String getMemoryResult()
+	{
+		return result;
+	}
 
 	/**
 	 *Subtraction Prototype
 	 */
 	public void subtractionPress(String currentNumberInDisplay){
+	
+		double currentInput;
+		
+		
+		//If the last operator pressed was not subtraction then we need to compute the previous operator in order to then calculate this one.
+		/*if(operator.equals("+") && !lastPressedButton.equals("=")) 
+		{
+			firstInput = this.getResult(currentNumberInDisplay);
+			currentInput = 0;
+		}
+		*/
+		if(firstInput.equals("0"))
+		{	
+			firstInput = currentNumberInDisplay;
+			currentInput = 0;
+		}
+		else 
+			currentInput = Double.parseDouble(currentNumberInDisplay);
+		
 		operator = "-";
-		double currentInput = Double.parseDouble(currentNumberInDisplay);
-		double resultDouble = currentInput - Double.parseDouble(firstInput);
+		double resultDouble = Double.parseDouble(firstInput) - currentInput;
 		result = String.valueOf(resultDouble);
 		firstInput = result;
 	}

@@ -284,31 +284,64 @@ public class CalculatorButtonsV01 implements ActionListener, KeyListener {
 		//- button
 		else if(e.getSource() == buttons[15])
 		{
+			
+			if(!calcFunctions.getOperator().equals("-") && !calcFunctions.getOperator().equals("0"))
+			{
+				txtField.setText(calcFunctions.getResult(txtField.getText()));
+				calcFunctions.setLastPressedButton("-");
+			}
+			calcFunctions.setOperator("-");
 			if(!calcFunctions.getLastPressedButton().equals("-"))
-				calcFunctions.subtractionPress(txtField.getText());
+			{
+				txtField.setText(calcFunctions.getResult(txtField.getText()));
+			}
 			calcFunctions.setLastPressedButton("-");
 		}
 		
 		// + button
 		else if(e.getSource() == buttons[16])
 		{
+			
+			if(!calcFunctions.getOperator().equals("+") 
+					&& !calcFunctions.getOperator().equals("0")
+					&& !calcFunctions.getMemoryResult().equals("0"))
+			{
+				txtField.setText(calcFunctions.getResult(txtField.getText()));
+				calcFunctions.setLastPressedButton("+");
+			}
+			calcFunctions.setOperator("+");
 			if(!calcFunctions.getLastPressedButton().equals("+"))
-				calcFunctions.sumPressed(txtField.getText());
+			{	
+				txtField.setText(calcFunctions.getResult(txtField.getText()));
+				
+			}
 			calcFunctions.setLastPressedButton("+");
 		}
 		
 		// = button
 		else if(e.getSource() == buttons[17])
 		{
+
 			if(calcFunctions.getOperator().equals("0"))
 				txtField.setText("0");
 			else if(calcFunctions.getLastPressedButton().equals("="))
-				txtField.setText(calcFunctions.getResult(calcFunctions.getSecondInput()));
+			{
+				double t=0;
+				if(calcFunctions.getOperator().equals("+"))
+					t = Double.parseDouble(calcFunctions.getFirstInput()) + Double.parseDouble(calcFunctions.getSecondInput());
+				else if(calcFunctions.getOperator().equals("-"))
+					t = Double.parseDouble(calcFunctions.getFirstInput()) - Double.parseDouble(calcFunctions.getSecondInput());
+				
+				calcFunctions.setFirstInput(String.valueOf(t)) ;
+				txtField.setText(calcFunctions.getFirstInput());
+			}
 			
 			else 
 			{
 				calcFunctions.setLastPressedButton("=");
-				txtField.setText(calcFunctions.getResult(txtField.getText()));
+				calcFunctions.setFirstInput( ""+Double.parseDouble(calcFunctions.getResult(txtField.getText())));
+				txtField.setText(""+calcFunctions.getFirstInput());
+				calcFunctions.resetResult();
 			}
 		}
 		
@@ -343,6 +376,7 @@ public class CalculatorButtonsV01 implements ActionListener, KeyListener {
 			calcFunctions.resetFirstInput();
 			calcFunctions.resetOperator();
 			calcFunctions.resetSecondInput();
+			calcFunctions.resetResult();
 		}
 		
 	}
