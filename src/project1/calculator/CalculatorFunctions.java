@@ -19,6 +19,16 @@ public class CalculatorFunctions {
 	}
 	
 	/**
+	 * Computes the inverse of the given number.
+	 * @param num the number to find the inverse of.
+	 * @return the inverse.
+	 */
+	public String inverse(String num)
+	{
+		return Double.toString(1 / (Double.parseDouble(num)));
+	}
+	
+	/**
 	 * Gets the last button the user pressed.
 	 * @return the last button the user pressed.
 	 */
