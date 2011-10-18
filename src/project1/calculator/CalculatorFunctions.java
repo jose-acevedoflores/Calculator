@@ -6,6 +6,7 @@ public class CalculatorFunctions {
 	private String secondInput;
 	private String operator;
 	private String result;
+	private String lastPressedButton;
 	
 	/**
 	 * Computes the square root of the given number.
@@ -15,6 +16,21 @@ public class CalculatorFunctions {
 	public String sqrt(String num)
 	{
 		return Double.toString(Math.sqrt(Double.parseDouble(num)));
+	}
+	
+	/**
+	 * Gets the last button the user pressed.
+	 * @return the last button the user pressed.
+	 */
+	public String getLastPressedButton()
+	{
+		return lastPressedButton;
+	}
+	
+	
+	public void setLastPressedButton(String lastPressedButton)
+	{
+		this.lastPressedButton = lastPressedButton;
 	}
 
 }

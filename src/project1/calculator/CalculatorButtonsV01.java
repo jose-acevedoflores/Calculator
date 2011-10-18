@@ -224,7 +224,7 @@ public class CalculatorButtonsV01 implements ActionListener, KeyListener {
 		// Square root
 		else if(e.getSource() == buttons[14])
 		{
-			
+			calcFun.setLastPressedButton("sqrt");
 			if(txtField.getText().equals("0"))
 				txtField.setText("0");
 			else if(txtField.getText().length() != 0)
@@ -234,7 +234,11 @@ public class CalculatorButtonsV01 implements ActionListener, KeyListener {
 		//Backspace
 		else if(e.getSource() == buttons[24]) 
 		{
-			if(txtField.getText().length() == 1)
+			if(calcFun.getLastPressedButton().equals("sqrt"))
+			{//Do nothing
+				
+			}
+			else if(txtField.getText().length() == 1)
 				txtField.setText("0");
 			else//(txtField.getText().length() != 0)
 			{
