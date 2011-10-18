@@ -3,9 +3,9 @@ package project1.calculator;
 public class CalculatorFunctions {
 
 	private String firstInput="0";
-	private String secondInput;
-	private String operator;
-	private String result;
+	private String secondInput="0";
+	private String operator="0";
+	private String result="0";
 	private String lastPressedButton="0";
 
 	/**
@@ -91,12 +91,28 @@ public class CalculatorFunctions {
 	}
 	
 	/**
+	 * Method to reset the first input  field
+	 */
+	public void resetFirstInput()
+	{
+		firstInput = "0";
+	}
+	
+	/**
 	 * 
 	 * @return
 	 */
 	public String getSecondInput()
 	{
 		return secondInput;
+	}
+	
+	/**
+	 * Reseting the second input.
+	 */
+	public void resetSecondInput()
+	{
+		secondInput = "0";
 	}
 
 	/**
@@ -107,6 +123,16 @@ public class CalculatorFunctions {
 	{
 		return operator;
 	}
+	
+	/**
+	 * Reseting the operator.
+	 */
+	public void resetOperator()
+	{
+		operator = "0";
+	}
+	
+	
 
 	/**
 	 *Subtraction Prototype
