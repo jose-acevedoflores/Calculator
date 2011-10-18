@@ -20,11 +20,11 @@ public class CalculatorButtonsV01 implements ActionListener, KeyListener {
 	
 	private JButton[] buttons = new JButton[27];
 	private JTextField txtField = new JTextField(36);
-	private CalculatorFunctions calcFun;
+	private CalculatorFunctions calcFunctions;
 	
 	public CalculatorButtonsV01(CalculatorFunctions f)
 	{
-		calcFun = f;
+		calcFunctions = f;
 		for(int i = 0 ; i < 10; i++)
 		{
 			buttons[i] = new JButton(Integer.toString(i));
@@ -133,108 +133,135 @@ public class CalculatorButtonsV01 implements ActionListener, KeyListener {
 		//Number 0
 		if(e.getSource() == buttons[0])
 		{
-			if(txtField.getText().length() == 1 && txtField.getText().charAt(0)=='0')
+			if(txtField.getText().length() == 1 && txtField.getText().charAt(0)=='0' || calcFunctions.getLastPressedButton().equals("sqrt"))
 				txtField.setText("0");
 			else
 				txtField.setText(txtField.getText()+"0");
+			calcFunctions.setLastPressedButton("0");
 		}
 		
 		//Number 1
 		else if(e.getSource() == buttons[1])
 		{
-			if(txtField.getText().length() == 1 && txtField.getText().charAt(0)=='0')
+			if(txtField.getText().length() == 1 && txtField.getText().charAt(0)=='0'|| calcFunctions.getLastPressedButton().equals("sqrt"))
 				txtField.setText("1");
 			else
 				txtField.setText(txtField.getText()+"1");
+			calcFunctions.setLastPressedButton("1");
 		}
 		
 		//Number 2
 		else if(e.getSource() == buttons[2])
 		{
-			if(txtField.getText().length() == 1 && txtField.getText().charAt(0)=='0')
+			if(txtField.getText().length() == 1 && txtField.getText().charAt(0)=='0'|| calcFunctions.getLastPressedButton().equals("sqrt"))
 				txtField.setText("2");
 			else
 				txtField.setText(txtField.getText()+"2");
+			calcFunctions.setLastPressedButton("2");
 		}
 		
 		//Number 3
 		else if(e.getSource() == buttons[3])
 		{
-			if(txtField.getText().length() == 1 && txtField.getText().charAt(0)=='0')
+			if(txtField.getText().length() == 1 && txtField.getText().charAt(0)=='0'|| calcFunctions.getLastPressedButton().equals("sqrt"))
 				txtField.setText("3");
 			else
 				txtField.setText(txtField.getText()+"3");
+			calcFunctions.setLastPressedButton("3");
 		}
 		
 		//Number 4
 		else if(e.getSource() == buttons[4])
 		{
-			if(txtField.getText().length() == 1 && txtField.getText().charAt(0)=='0')
+			if(txtField.getText().length() == 1 && txtField.getText().charAt(0)=='0'|| calcFunctions.getLastPressedButton().equals("sqrt"))
 				txtField.setText("4");
 			else
 				txtField.setText(txtField.getText()+"4");
+			calcFunctions.setLastPressedButton("4");
 		}
 		
 		//Number 5
 		else if(e.getSource() == buttons[5])
 		{
-			if(txtField.getText().length() == 1 && txtField.getText().charAt(0)=='0')
+			if(txtField.getText().length() == 1 && txtField.getText().charAt(0)=='0'|| calcFunctions.getLastPressedButton().equals("sqrt"))
 				txtField.setText("5");
 			else
 				txtField.setText(txtField.getText()+"5");
+			calcFunctions.setLastPressedButton("5");
 		}
 		
 		//Number 6
 		else if(e.getSource() == buttons[6])
 		{
-			if(txtField.getText().length() == 1 && txtField.getText().charAt(0)=='0')
+			if(txtField.getText().length() == 1 && txtField.getText().charAt(0)=='0'|| calcFunctions.getLastPressedButton().equals("sqrt"))
 				txtField.setText("6");
 			else
 				txtField.setText(txtField.getText()+"6");
+			calcFunctions.setLastPressedButton("6");
 		}
 		
 		//Number 7
 		else if(e.getSource() == buttons[7])
 		{
-			if(txtField.getText().length() == 1 && txtField.getText().charAt(0)=='0')
+			if(txtField.getText().length() == 1 && txtField.getText().charAt(0)=='0'|| calcFunctions.getLastPressedButton().equals("sqrt"))
 				txtField.setText("7");
 			else
 				txtField.setText(txtField.getText()+"7");
+			calcFunctions.setLastPressedButton("7");
 		}
 		
 		//Number 8
 		else if(e.getSource() == buttons[8])
 		{
-			if(txtField.getText().length() == 1 && txtField.getText().charAt(0)=='0')
+			if(txtField.getText().length() == 1 && txtField.getText().charAt(0)=='0'|| calcFunctions.getLastPressedButton().equals("sqrt"))
 				txtField.setText("8");
 			else
 				txtField.setText(txtField.getText()+"8");
+			calcFunctions.setLastPressedButton("8");
 		}
 		
 		//Number 9
 		else if(e.getSource() == buttons[9])
 		{
-			if(txtField.getText().length() == 1 && txtField.getText().charAt(0)=='0')
+			if(txtField.getText().length() == 1 && txtField.getText().charAt(0)=='0'|| calcFunctions.getLastPressedButton().equals("sqrt"))
 				txtField.setText("9");
 			else
 				txtField.setText(txtField.getText()+"9");
+			calcFunctions.setLastPressedButton("9");
 		}
 		
 		
 		// Square root
 		else if(e.getSource() == buttons[14])
 		{
-			calcFun.setLastPressedButton("sqrt");
+			calcFunctions.setLastPressedButton("sqrt");
 			if(txtField.getText().equals("0"))
 				txtField.setText("0");
 			else if(txtField.getText().length() != 0)
-				txtField.setText(calcFun.sqrt(txtField.getText()));
+				txtField.setText(calcFunctions.sqrt(txtField.getText()));
+		}
+		
+		// + button
+		else if(e.getSource() == buttons[16])
+		{
+			//if(!calcFunctions.getLastPressedButton().equals("+"))
+				calcFunctions.sumPressed(txtField.getText());
+			calcFunctions.setLastPressedButton("+");
+		}
+		
+		// = button
+		else if(e.getSource() == buttons[17])
+		{
+			
+			txtField.setText(calcFunctions.getResult(txtField.getText()));
+			calcFunctions.setLastPressedButton("=");
+			
 		}
 		
 		//Backspace
 		else if(e.getSource() == buttons[24]) 
 		{
-			if(calcFun.getLastPressedButton().equals("sqrt"))
+			if(calcFunctions.getLastPressedButton().equals("sqrt"))
 			{//Do nothing
 				
 			}
