@@ -32,5 +32,23 @@ public class CalculatorFunctions {
 	{
 		this.lastPressedButton = lastPressedButton;
 	}
+	
+	/**
+	 *Subtraction Prototype
+	 */
+	/*public String subtraction(){
+		double subtraction = Double.parseDouble(firstInput) - Double.parseDouble(secondInput);
+		
+		return Double.toString(subtraction);
+	}*/
+	
+	/**
+	 * Multiplication Prototype
+	 */
+	/*public String multiplication(){
+		double multiplication = Double.parseDouble(firstInput) * Double.parseDouble(secondInput);
+		
+		return Double.toString(multiplication);
+	}*/
 
 }
