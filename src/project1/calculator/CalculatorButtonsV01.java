@@ -251,7 +251,7 @@ public class CalculatorButtonsV01 implements ActionListener, KeyListener {
 		//Clear E button
 		else if(e.getSource() == buttons[25])
 		{
-				txtField.setText("0");
+			txtField.setText("0");
 		}
 		
 		//Clear button
@@ -262,7 +262,7 @@ public class CalculatorButtonsV01 implements ActionListener, KeyListener {
 		
 	}
 
-	
+	//Action listeners implementation
 	public void keyPressed(KeyEvent arg0) 
 	{
 		if(arg0.getKeyCode() == KeyEvent.VK_0)
