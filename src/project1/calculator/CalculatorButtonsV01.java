@@ -444,7 +444,11 @@ public class CalculatorButtonsV01 implements ActionListener, KeyListener {
 			buttons[9].doClick();
 		}
 		
-		else if
+		else if(arg0.getKeyCode() == KeyEvent.VK_ENTER)
+		{
+			buttons[17].doClick();
+		}
+		
 	}
 
 
