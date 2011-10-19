@@ -365,8 +365,8 @@ public class CalculatorButtonsV01 implements ActionListener, KeyListener {
 			
 			else 
 			{
-				calcFunctions.setSecondInput(txtField.getText());
-				calcFunctions.compute(calcFunctions.getFirstInput(), calcFunctions.getSecondInput());
+				calcFunctions.setSecondInput(txtField.getText() );
+				calcFunctions.compute(calcFunctions.getFirstInput(), calcFunctions.getSecondInput() );
 				calcFunctions.setLastResult(calcFunctions.getFirstInput());
 				calcFunctions.setFirstInput("q");
 				txtField.setText(calcFunctions.getLastResult());
