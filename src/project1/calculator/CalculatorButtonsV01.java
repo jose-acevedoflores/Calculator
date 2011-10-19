@@ -280,6 +280,21 @@ public class CalculatorButtonsV01 implements ActionListener, KeyListener {
 			calcFunctions.setReadyForSecondInput(true);
 		}
 		
+		// Division NOT WORKING as it should... (press backspace after pressing the operator)
+		else if(e.getSource() == buttons[10])
+		{
+			String result = calcFunctions.divPressed(txtField.getText());
+			txtField.setText(result);
+			calcFunctions.setLastPressedButton("/");
+		}
+		
+		//Multiplication NOT WORKING as it should... (press backspace after pressing the operator)
+		else if(e.getSource() == buttons[11])
+		{
+			String result = calcFunctions.multPressed(txtField.getText());
+			txtField.setText(result);
+			calcFunctions.setLastPressedButton("*");
+		}
 		
 		// Square root
 		else if(e.getSource() == buttons[14])
@@ -428,6 +443,8 @@ public class CalculatorButtonsV01 implements ActionListener, KeyListener {
 		{
 			buttons[9].doClick();
 		}
+		
+		else if
 	}
 
 

@@ -48,8 +48,7 @@ public class CalculatorFunctions {
 	}
 
 	/**
-
-	 * Performs the sum of the number in the display and the number in memory(firstInput is the number in memory)
+	 * Performs the sum of the number in the display and the number in memory(firstInput is the number in memory).
 	 * @param currentCalculatorNumber
 	 */
 	public String sumPressed(String currentNumberInDisplay)
@@ -68,8 +67,9 @@ public class CalculatorFunctions {
 	}
 	
 	/**
-	 *Subtraction Prototype
+	 *Performs the subtraction of the number in the display and the number in memory (firstInput is the number on memory).
 	 *@param currentNumberInDisplay
+	 *@return firstInput
 	 */
 	public String minusPressed(String currentNumberInDisplay)
 	{
@@ -85,6 +85,46 @@ public class CalculatorFunctions {
 		secondInputReady = false;
 		return firstInput;
 	
+	}
+	
+	/**
+	 * Performs the multiplication of the number in the display and the number in memory (firstInput is the number on memory).
+	 * @param currentNumberInDisplay
+	 * @return firstInput
+	 */
+	public String multPressed(String currentNumberInDisplay)
+	{
+		if(!firstInput.equals("q") && secondInputReady == true)
+		{
+			secondInput = currentNumberInDisplay;
+			firstInput = this.compute(firstInput,secondInput);
+		}
+		else
+			firstInput = currentNumberInDisplay;
+		
+		operator = "*";
+		secondInputReady = false;
+		return firstInput;
+	}
+	
+	/**
+	 * Performs the division of the number in the display and the number in memory (firstInput is the number on memory).
+	 * @param currentNumberInDisplay
+	 * @return firstInput
+	 */
+	public String divPressed(String currentNumberInDisplay)
+	{
+		if(!firstInput.equals("q") && secondInputReady == true)
+		{
+			secondInput = currentNumberInDisplay;
+			firstInput = this.compute(firstInput,secondInput);
+		}
+		else
+			firstInput = currentNumberInDisplay;
+		
+		operator = "/";
+		secondInputReady = false;
+		return firstInput;
 	}
 
 	/**
