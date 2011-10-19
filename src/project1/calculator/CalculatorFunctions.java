@@ -2,11 +2,12 @@ package project1.calculator;
 
 public class CalculatorFunctions {
 
-	private String firstInput="0";
+	private String firstInput="q";
 	private String secondInput;
 	private String operator="0";
-	private String result="0";
 	private String lastPressedButton="0";
+	private boolean secondInputReady = false;
+	private String lastResult="0";
 
 	/**
 	 * Computes the square root of the given number.
@@ -51,61 +52,88 @@ public class CalculatorFunctions {
 	 * Performs the sum of the number in the display and the number in memory(firstInput is the number in memory)
 	 * @param currentCalculatorNumber
 	 */
-	public void sumPressed(String currentNumberInDisplay)
+	public String sumPressed(String currentNumberInDisplay)
 	{
-		
-		double currentInput;
-		
-	
-	/*	//If the last operator pressed was the sum then we need to compute the previous operator in order to then calculate this one.
-		if(operator.equals("-")&& !lastPressedButton.equals("=")) 
+		if(!firstInput.equals("q") && secondInputReady == true)
 		{
-			firstInput = this.getResult(currentNumberInDisplay);
-			currentInput = 0;
-		}*/
-		
-		if(firstInput.equals("0")) //This is useless but for ease of reading it's here
-		{	
-			firstInput = currentNumberInDisplay;
-			currentInput = 0;
+			secondInput = currentNumberInDisplay;
+			firstInput = this.compute(firstInput,secondInput);
 		}
-		else 
-			currentInput = Double.parseDouble(currentNumberInDisplay);
+		else
+			firstInput = currentNumberInDisplay;
 		
 		operator = "+";
-		double resultDouble = Double.parseDouble(firstInput) + currentInput;
-		result = String.valueOf(resultDouble);
-		firstInput = result;
+		secondInputReady = false;
+		return firstInput;
+	}
+	
+	/**
+	 *Subtraction Prototype
+	 */
+	public String minusPressed(String currentNumberInDisplay)
+	{
+		if(!firstInput.equals("q") && secondInputReady == true)
+		{
+			secondInput = currentNumberInDisplay;
+			firstInput = this.compute(firstInput,secondInput);
+		}
+		else
+			firstInput = currentNumberInDisplay;
+		
+		operator = "-";
+		secondInputReady = false;
+		return firstInput;
+	
 	}
 
 	/**
-	 *Computes the result of the number in memory and the number that is currently in the display.
-	 *The operator used will be the last one that was pressed.
-	 * @return 
+	 * 
+	 * @param fTerm
+	 * @param sTerm
+	 * @return
 	 */
-	public String getResult(String currentNumberInDisplay)
+	public String compute(String fTerm, String sTerm)
 	{
-
-
-		if(operator.equals("+") )//&& lastPressedButton.equals("="))
+		double result=0;
+		
+		if(lastPressedButton.equals("="))
 		{
-			
-			secondInput = currentNumberInDisplay;
-			result = String.valueOf(Double.parseDouble(result) + Double.parseDouble(secondInput));
-			System.out.println("in plus "+result);
+			lastResult = firstInput;
+			fTerm = lastResult;
+			firstInput = "q";
 		}
 		
-		else if(operator.equals("-") )//&& lastPressedButton.equals("="))
+		if(operator.equals("+"))
 		{
-			secondInput = currentNumberInDisplay;
-			result = String.valueOf(Double.parseDouble(result) - Double.parseDouble(secondInput));
-			System.out.println("in minus "+result);
+			result = Double.parseDouble(fTerm) + Double.parseDouble(sTerm);
 		}
-
-
-		return result;
+		else if(operator.equals("-"))
+		{
+			result = Double.parseDouble(fTerm) - Double.parseDouble(sTerm);
+		}
+		else if(operator.equals("*"))
+		{
+			result = Double.parseDouble(fTerm) * Double.parseDouble(sTerm);
+		}
+		else if(operator.equals("/"))
+		{
+			result = Double.parseDouble(fTerm) / Double.parseDouble(sTerm);
+		}
+		
+	
+		return String.valueOf(result);
 	}
-
+	
+	public String getLastResult()
+	{
+		return lastResult;
+	}
+	
+	public void setLastResult(String last)
+	{
+		lastResult = last;
+	}
+	
 	/**
 	 *
 	 * @return
@@ -118,9 +146,9 @@ public class CalculatorFunctions {
 	/**
 	 * Method to reset the first input  field
 	 */
-	public void resetFirstInput()
+	public void setFirstInput(String value)
 	{
-		firstInput = "0";
+		firstInput = value;
 	}
 	
 	/**
@@ -135,9 +163,9 @@ public class CalculatorFunctions {
 	/**
 	 * Reseting the second input.
 	 */
-	public void resetSecondInput()
+	public void setSecondInput(String value)
 	{
-		secondInput = "0";
+		secondInput = value;
 	}
 
 	/**
@@ -152,59 +180,34 @@ public class CalculatorFunctions {
 	/**
 	 * Reseting the operator.
 	 */
-	public void resetOperator()
-	{
-		operator = "0";
-	}
-	
-	public void resetResult()
-	{
-		result = "0";
-	}
-	
 	public void setOperator(String op)
 	{
-		operator =op;
+		operator = op;
 	}
 	
-	public void setFirstInput(String temp)
-	{
-		firstInput = temp;
-	}
 	
-	public String getMemoryResult()
-	{
-		return result;
-	}
-
 	/**
-	 *Subtraction Prototype
+	 * 
+	 * @return
 	 */
-	public void subtractionPress(String currentNumberInDisplay){
-	
-		double currentInput;
-		
-		
-		//If the last operator pressed was not subtraction then we need to compute the previous operator in order to then calculate this one.
-		/*if(operator.equals("+") && !lastPressedButton.equals("=")) 
-		{
-			firstInput = this.getResult(currentNumberInDisplay);
-			currentInput = 0;
-		}
-		*/
-		if(firstInput.equals("0"))
-		{	
-			firstInput = currentNumberInDisplay;
-			currentInput = 0;
-		}
-		else 
-			currentInput = Double.parseDouble(currentNumberInDisplay);
-		
-		operator = "-";
-		double resultDouble = Double.parseDouble(firstInput) - currentInput;
-		result = String.valueOf(resultDouble);
-		firstInput = result;
+	public boolean isReadyForSecondInput()
+	{
+		return secondInputReady;
 	}
+	
+	/**
+	 * 
+	 * @param t
+	 */
+	public void setReadyForSecondInput(boolean t)
+	{
+		secondInputReady = t;
+	}
+	
+	
+	
+
+	
 
 	/**
 	 * Multiplication Prototype

@@ -142,6 +142,7 @@ public class CalculatorButtonsV01 implements ActionListener, KeyListener {
 			else
 				txtField.setText(txtField.getText()+"0");
 			calcFunctions.setLastPressedButton("0");
+			calcFunctions.setReadyForSecondInput(true);
 		}
 		
 		//Number 1
@@ -156,6 +157,7 @@ public class CalculatorButtonsV01 implements ActionListener, KeyListener {
 			else
 				txtField.setText(txtField.getText()+"1");
 			calcFunctions.setLastPressedButton("1");
+			calcFunctions.setReadyForSecondInput(true);
 		}
 		
 		//Number 2
@@ -170,6 +172,7 @@ public class CalculatorButtonsV01 implements ActionListener, KeyListener {
 			else
 				txtField.setText(txtField.getText()+"2");
 			calcFunctions.setLastPressedButton("2");
+			calcFunctions.setReadyForSecondInput(true);
 		}
 		
 		//Number 3
@@ -184,6 +187,7 @@ public class CalculatorButtonsV01 implements ActionListener, KeyListener {
 			else
 				txtField.setText(txtField.getText()+"3");
 			calcFunctions.setLastPressedButton("3");
+			calcFunctions.setReadyForSecondInput(true);
 		}
 		
 		//Number 4
@@ -198,6 +202,7 @@ public class CalculatorButtonsV01 implements ActionListener, KeyListener {
 			else
 				txtField.setText(txtField.getText()+"4");
 			calcFunctions.setLastPressedButton("4");
+			calcFunctions.setReadyForSecondInput(true);
 		}
 		
 		//Number 5
@@ -212,6 +217,7 @@ public class CalculatorButtonsV01 implements ActionListener, KeyListener {
 			else
 				txtField.setText(txtField.getText()+"5");
 			calcFunctions.setLastPressedButton("5");
+			calcFunctions.setReadyForSecondInput(true);
 		}
 		
 		//Number 6
@@ -226,6 +232,7 @@ public class CalculatorButtonsV01 implements ActionListener, KeyListener {
 			else
 				txtField.setText(txtField.getText()+"6");
 			calcFunctions.setLastPressedButton("6");
+			calcFunctions.setReadyForSecondInput(true);
 		}
 		
 		//Number 7
@@ -240,6 +247,7 @@ public class CalculatorButtonsV01 implements ActionListener, KeyListener {
 			else
 				txtField.setText(txtField.getText()+"7");
 			calcFunctions.setLastPressedButton("7");
+			calcFunctions.setReadyForSecondInput(true);
 		}
 		
 		//Number 8
@@ -254,6 +262,7 @@ public class CalculatorButtonsV01 implements ActionListener, KeyListener {
 			else
 				txtField.setText(txtField.getText()+"8");
 			calcFunctions.setLastPressedButton("8");
+			calcFunctions.setReadyForSecondInput(true);
 		}
 		
 		//Number 9
@@ -268,6 +277,7 @@ public class CalculatorButtonsV01 implements ActionListener, KeyListener {
 			else
 				txtField.setText(txtField.getText()+"9");
 			calcFunctions.setLastPressedButton("9");
+			calcFunctions.setReadyForSecondInput(true);
 		}
 		
 		
@@ -284,37 +294,17 @@ public class CalculatorButtonsV01 implements ActionListener, KeyListener {
 		//- button
 		else if(e.getSource() == buttons[15])
 		{
-			
-			if(!calcFunctions.getOperator().equals("-") && !calcFunctions.getOperator().equals("0"))
-			{
-				txtField.setText(calcFunctions.getResult(txtField.getText()));
-				calcFunctions.setLastPressedButton("-");
-			}
-			calcFunctions.setOperator("-");
-			if(!calcFunctions.getLastPressedButton().equals("-"))
-			{
-				txtField.setText(calcFunctions.getResult(txtField.getText()));
-			}
+
+			String result = calcFunctions.minusPressed(txtField.getText());
+			txtField.setText(result);	
 			calcFunctions.setLastPressedButton("-");
 		}
 		
 		// + button
 		else if(e.getSource() == buttons[16])
 		{
-			
-			if(!calcFunctions.getOperator().equals("+") 
-					&& !calcFunctions.getOperator().equals("0")
-					&& !calcFunctions.getMemoryResult().equals("0"))
-			{
-				txtField.setText(calcFunctions.getResult(txtField.getText()));
-				calcFunctions.setLastPressedButton("+");
-			}
-			calcFunctions.setOperator("+");
-			if(!calcFunctions.getLastPressedButton().equals("+"))
-			{	
-				txtField.setText(calcFunctions.getResult(txtField.getText()));
-				
-			}
+			String result = calcFunctions.sumPressed(txtField.getText());
+			txtField.setText(result);	
 			calcFunctions.setLastPressedButton("+");
 		}
 		
@@ -326,23 +316,25 @@ public class CalculatorButtonsV01 implements ActionListener, KeyListener {
 				txtField.setText("0");
 			else if(calcFunctions.getLastPressedButton().equals("="))
 			{
-				double t=0;
-				if(calcFunctions.getOperator().equals("+"))
-					t = Double.parseDouble(calcFunctions.getFirstInput()) + Double.parseDouble(calcFunctions.getSecondInput());
-				else if(calcFunctions.getOperator().equals("-"))
-					t = Double.parseDouble(calcFunctions.getFirstInput()) - Double.parseDouble(calcFunctions.getSecondInput());
+				double temporary=0;
 				
-				calcFunctions.setFirstInput(String.valueOf(t)) ;
-				txtField.setText(calcFunctions.getFirstInput());
+				if(calcFunctions.getOperator().equals("+"))
+					temporary = Double.parseDouble(calcFunctions.getLastResult()) + Double.parseDouble(calcFunctions.getSecondInput());
+				
+				else if(calcFunctions.getOperator().equals("-"))
+					temporary = Double.parseDouble(calcFunctions.getLastResult()) - Double.parseDouble(calcFunctions.getSecondInput());
+				
+				calcFunctions.setLastResult(String.valueOf(temporary)) ;
+				txtField.setText(calcFunctions.getLastResult());
 			}
 			
 			else 
 			{
-				calcFunctions.setLastPressedButton("=");
-				calcFunctions.setFirstInput( ""+Double.parseDouble(calcFunctions.getResult(txtField.getText())));
-				txtField.setText(""+calcFunctions.getFirstInput());
-				calcFunctions.resetResult();
+				calcFunctions.compute(calcFunctions.getFirstInput(), txtField.getText());
+				txtField.setText(calcFunctions.getLastResult());
+				calcFunctions.setReadyForSecondInput(false);
 			}
+			calcFunctions.setLastPressedButton("=");
 		}
 		
 		//Backspace
@@ -373,10 +365,10 @@ public class CalculatorButtonsV01 implements ActionListener, KeyListener {
 		{
 			txtField.setText("0");
 			calcFunctions.setLastPressedButton("clear");
-			calcFunctions.resetFirstInput();
-			calcFunctions.resetOperator();
-			calcFunctions.resetSecondInput();
-			calcFunctions.resetResult();
+			calcFunctions.setFirstInput("0");
+			calcFunctions.setOperator("0");
+			calcFunctions.setSecondInput("0");
+			calcFunctions.setReadyForSecondInput(false);
 		}
 		
 	}
