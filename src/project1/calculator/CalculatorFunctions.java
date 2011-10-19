@@ -69,6 +69,7 @@ public class CalculatorFunctions {
 	
 	/**
 	 *Subtraction Prototype
+	 *@param currentNumberInDisplay
 	 */
 	public String minusPressed(String currentNumberInDisplay)
 	{
