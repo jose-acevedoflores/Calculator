@@ -313,7 +313,7 @@ public class CalculatorButtonsV01 implements ActionListener, KeyListener {
 		{
 
 			if(calcFunctions.getOperator().equals("0"))
-				txtField.setText("0");
+				txtField.setText(txtField.getText());
 			else if(calcFunctions.getLastPressedButton().equals("="))
 			{
 				double temporary=0;
@@ -330,7 +330,10 @@ public class CalculatorButtonsV01 implements ActionListener, KeyListener {
 			
 			else 
 			{
-				calcFunctions.compute(calcFunctions.getFirstInput(), txtField.getText());
+				calcFunctions.setSecondInput(txtField.getText());
+				calcFunctions.compute(calcFunctions.getFirstInput(), calcFunctions.getSecondInput());
+				calcFunctions.setLastResult(calcFunctions.getFirstInput());
+				calcFunctions.setFirstInput("q");
 				txtField.setText(calcFunctions.getLastResult());
 				calcFunctions.setReadyForSecondInput(false);
 			}
@@ -365,7 +368,7 @@ public class CalculatorButtonsV01 implements ActionListener, KeyListener {
 		{
 			txtField.setText("0");
 			calcFunctions.setLastPressedButton("clear");
-			calcFunctions.setFirstInput("0");
+			calcFunctions.setFirstInput("q");
 			calcFunctions.setOperator("0");
 			calcFunctions.setSecondInput("0");
 			calcFunctions.setReadyForSecondInput(false);
