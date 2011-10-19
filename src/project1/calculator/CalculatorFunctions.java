@@ -8,6 +8,8 @@ public class CalculatorFunctions {
 	private String lastPressedButton="0";
 	private boolean secondInputReady = false;
 	private String lastResult="0";
+	//Last result temporally  saves the result computed in the previous iteration. If the user clicks equals the firstInput is set to "q" (sentinel value)
+	//
 
 	/**
 	 * Computes the square root of the given number.
