@@ -99,9 +99,7 @@ public class CalculatorFunctions {
 		
 		if(lastPressedButton.equals("="))
 		{
-			lastResult = firstInput;
 			fTerm = lastResult;
-			firstInput = "q";
 		}
 		
 		if(operator.equals("+"))
@@ -121,6 +119,8 @@ public class CalculatorFunctions {
 			result = Double.parseDouble(fTerm) / Double.parseDouble(sTerm);
 		}
 		
+		
+		firstInput = String.valueOf(result);
 	
 		return String.valueOf(result);
 	}
