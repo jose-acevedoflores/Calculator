@@ -18,9 +18,10 @@ import javax.swing.*;
 
 public class CalculatorButtonsV01 implements ActionListener, KeyListener {
 	
-	private JButton[] buttons = new JButton[27];
-	private JTextField txtField = new JTextField(36);
-	private CalculatorFunctions calcFunctions;
+	//Public for testing
+	public JButton[] buttons = new JButton[27];
+	public JTextField txtField = new JTextField(36);
+	public CalculatorFunctions calcFunctions;
 	
 	public CalculatorButtonsV01(CalculatorFunctions f)
 	{
