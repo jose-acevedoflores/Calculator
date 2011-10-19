@@ -300,7 +300,7 @@ public class CalculatorButtonsV01 implements ActionListener, KeyListener {
 			calcFunctions.setReadyForSecondInput(true);
 		}
 		
-		// Division NOT WORKING as it should... (press backspace after pressing the operator)
+		// Division
 		else if(e.getSource() == buttons[10])
 		{
 			String result = calcFunctions.divPressed(txtField.getText());
@@ -308,7 +308,7 @@ public class CalculatorButtonsV01 implements ActionListener, KeyListener {
 			calcFunctions.setLastPressedButton("/");
 		}
 		
-		//Multiplication NOT WORKING as it should... (press backspace after pressing the operator)
+		// Multiplication 
 		else if(e.getSource() == buttons[11])
 		{
 			String result = calcFunctions.multPressed(txtField.getText());
@@ -471,7 +471,6 @@ public class CalculatorButtonsV01 implements ActionListener, KeyListener {
 		
 	}
 
-
 	public void keyReleased(KeyEvent arg0) {
 		// TODO Auto-generated method stub
 		
@@ -482,6 +481,7 @@ public class CalculatorButtonsV01 implements ActionListener, KeyListener {
 		// TODO Auto-generated method stub
 		
 	}
+	
 	
 
 }
