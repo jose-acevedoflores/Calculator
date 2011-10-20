@@ -18,6 +18,7 @@ public class CalculatorFunctions {
 	 */
 	public String sqrt(String num)
 	{ 
+		secondInputReady = true;
 		return Double.toString(Math.sqrt(Double.parseDouble(num)));
 	}
 

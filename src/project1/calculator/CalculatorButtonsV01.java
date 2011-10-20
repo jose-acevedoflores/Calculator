@@ -360,6 +360,12 @@ public class CalculatorButtonsV01 implements ActionListener, KeyListener {
 				else if(calcFunctions.getOperator().equals("-"))
 					temporary = Double.parseDouble(calcFunctions.getLastResult()) - Double.parseDouble(calcFunctions.getSecondInput());
 				
+				else if(calcFunctions.getOperator().equals("*"))
+					temporary = Double.parseDouble(calcFunctions.getLastResult()) * Double.parseDouble(calcFunctions.getSecondInput());
+				
+				else if(calcFunctions.getOperator().equals("/"))
+					temporary = Double.parseDouble(calcFunctions.getLastResult()) / Double.parseDouble(calcFunctions.getSecondInput());
+				
 				calcFunctions.setLastResult(String.valueOf(temporary)) ;
 				txtField.setText(calcFunctions.getLastResult());
 			}

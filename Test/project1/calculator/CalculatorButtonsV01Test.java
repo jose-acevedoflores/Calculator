@@ -120,8 +120,103 @@ public class CalculatorButtonsV01Test {
 					-	0 ) < 1e-10
 				);
 		
+		c.buttons[15].doClick();// minus button
+		c.buttons[8].doClick(); // 8 button
+		c.buttons[25].doClick(); // CE button
+		c.buttons[7].doClick(); // 7 button
+		c.buttons[3].doClick(); // 3 button
+		c.buttons[5].doClick(); // 5 button
+		c.buttons[24].doClick(); // Backspace button
+		c.buttons[10].doClick(); // Division button
+		c.buttons[11].doClick(); // Multiplication button
+		c.buttons[17].doClick(); // Equals button
+		
+		assertTrue(
+				
+				Math.abs(Double.parseDouble(c.txtField.getText()) 
+					-	5329 ) < 1e-10
+				);
+		
+		c.buttons[10].doClick(); // Division button
+		c.buttons[8].doClick(); // 8 button
+		c.buttons[6].doClick(); // 6 button
+		c.buttons[25].doClick(); // CE button
+		c.buttons[8].doClick(); // 8 button
+		c.buttons[17].doClick(); // Equals button
+		
+		assertTrue(
+				
+				Math.abs(Double.parseDouble(c.txtField.getText()) 
+					-	666.125 ) < 1e-10
+				);
+		
+		c.buttons[11].doClick(); // Multiplication button
+		c.buttons[4].doClick(); // 4 button
+		c.buttons[15].doClick();// minus button
+		c.buttons[2].doClick(); // 2 button
+		c.buttons[0].doClick(); // 0 button
+		c.buttons[0].doClick(); // 0 button
+		c.buttons[0].doClick(); // 0 button
+		c.buttons[10].doClick(); // Division button
+		c.buttons[7].doClick(); // 7 buttons
+		c.buttons[15].doClick();// minus button
+		c.buttons[9].doClick(); // 9 button
+		c.buttons[0].doClick(); // 0 button
+		c.buttons[10].doClick(); // Division button
+		c.buttons[4].doClick(); // 4 button
+		c.buttons[15].doClick();// minus button
+		c.buttons[8].doClick(); // 8 button
+		c.buttons[17].doClick(); // Equals button
+		
+		assertTrue(
+				
+				Math.abs(Double.parseDouble(c.txtField.getText()) 
+					+	6.767857143 ) < 1e-6
+				);
+	
+		frameTest.dispose();
+	}
+	
+	@Test
+	public void testSqrt()
+	{
+		c.addGUIToFrame(frameTest);
+		
+		c.buttons[9].doClick(); // 9 button
+		c.buttons[14].doClick(); // sqrt button
+		c.buttons[16].doClick();// plus button
+		c.buttons[17].doClick(); // Equals button
+		
+		assertTrue(
+				
+				Math.abs(Double.parseDouble(c.txtField.getText()) 
+					-	6) < 1e-6
+				);
+		
+		c.buttons[11].doClick(); // Multiplication button
+		c.buttons[4].doClick(); // 4 button
+		c.buttons[15].doClick();// minus button
+		c.buttons[2].doClick(); // 2 button
+		c.buttons[0].doClick(); // 0 button
+		c.buttons[10].doClick(); // Division button
+		c.buttons[7].doClick(); // 7 buttons
+		c.buttons[14].doClick(); // sqrt button
+		c.buttons[15].doClick();// minus button
+		c.buttons[10].doClick(); // Division button
+		c.buttons[4].doClick(); // 4 button
+		c.buttons[15].doClick();// minus button
+		c.buttons[8].doClick(); // 8 button
+		c.buttons[17].doClick(); // Equals button
+		
+		assertTrue(
+				
+				Math.abs(Double.parseDouble(c.txtField.getText()) 
+					+	7.622035527 ) < 1e-6
+				);
+		
 		
 	}
+	
 	
 
 }
