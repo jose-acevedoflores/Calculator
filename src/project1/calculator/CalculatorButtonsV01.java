@@ -482,7 +482,7 @@ public class CalculatorButtonsV01 implements ActionListener, KeyListener {
 			buttons[7].doClick();
 		}
 		
-		else if(arg0.getKeyCode() == KeyEvent.VK_8)
+		else if(arg0.getKeyCode() == KeyEvent.VK_8 && !arg0.isShiftDown())
 		{
 			buttons[8].doClick();
 		}
@@ -496,12 +496,23 @@ public class CalculatorButtonsV01 implements ActionListener, KeyListener {
 		{
 			buttons[17].doClick();
 		}
+
+		else if(arg0.getKeyCode() == KeyEvent.VK_EQUALS && !arg0.isShiftDown())
+		{
+			buttons[17].doClick();
+		}
 		
 		else if(arg0.getKeyCode() == KeyEvent.VK_SLASH)
 		{
 			buttons[10].doClick();
 		}
 		
+		else if(arg0.getKeyCode() == KeyEvent.VK_8 && arg0.isShiftDown())
+		{
+			buttons[11].doClick();
+		}
+		
+
 		else if(arg0.getKeyCode() == KeyEvent.VK_8 && arg0.isShiftDown())
 		{
 			buttons[11].doClick();
@@ -537,6 +548,12 @@ public class CalculatorButtonsV01 implements ActionListener, KeyListener {
 			buttons[26].doClick();
 		}
 	
+
+		else if(arg0.getKeyCode() == KeyEvent.VK_EQUALS && arg0.isShiftDown())
+		{
+			buttons[16].doClick();
+		}
+		
 		else if(arg0.getKeyCode() == KeyEvent.VK_ADD)
 		{
 			buttons[16].doClick();
