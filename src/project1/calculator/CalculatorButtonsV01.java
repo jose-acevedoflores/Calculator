@@ -453,7 +453,10 @@ public class CalculatorButtonsV01 implements ActionListener, KeyListener {
 		//Backspace
 		else if(e.getSource() == buttons[24]) 
 		{
-			if(calcFunctions.getLastPressedButton().equals("sqrt") || calcFunctions.getLastPressedButton().equals("="))
+			if(calcFunctions.getLastPressedButton().equals("sqrt") 
+					|| calcFunctions.getLastPressedButton().equals("=")
+					|| calcFunctions.getLastPressedButton().equals("1/x")
+					|| calcFunctions.getLastPressedButton().equals("%"))
 			{//Do nothing
 				
 			}

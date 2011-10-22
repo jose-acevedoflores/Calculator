@@ -444,6 +444,43 @@ public class CalculatorButtonsV01Test {
 							+ 2.4412686475064) < 1e-6
 						);
 			
+			c.buttons[26].doClick(); // Clear button
+			
+			c.buttons[7].doClick();
+			c.buttons[2].doClick(); 
+			c.buttons[18].doClick(); // . button
+			c.buttons[4].doClick();
+			c.buttons[4].doClick();
+			c.buttons[11].doClick(); // Mult button
+			c.buttons[9].doClick();
+			c.buttons[1].doClick();
+			c.buttons[18].doClick(); // . button
+			c.buttons[3].doClick();
+			c.buttons[15].doClick();// minus button
+			c.buttons[2].doClick();
+			c.buttons[3].doClick();
+			c.buttons[18].doClick();// . button
+			c.buttons[6].doClick();
+			c.buttons[3].doClick();
+			c.buttons[5].doClick();
+			c.buttons[15].doClick();// minus button
+			c.buttons[4].doClick();
+			c.buttons[5].doClick();
+			c.buttons[0].doClick();
+			c.buttons[18].doClick();// . button
+			c.buttons[3].doClick();
+			c.buttons[19].doClick(); // +/- button
+			c.buttons[10].doClick(); // Division button
+			c.buttons[3].doClick();
+			c.buttons[5].doClick();
+			c.buttons[17].doClick(); // Equals button.
+	
+			assertTrue(		
+					Math.abs(Double.parseDouble(c.txtField.getText() )
+							- 201.15534285714) < 1e-6
+						);
+			
+			
 			
 		}
 		

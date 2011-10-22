@@ -42,7 +42,19 @@ public class CalculatorFunctions {
 	public String signChange(String num)
 	{
 		if(!num.equals("0"))
-			return Double.toString(Double.parseDouble(num) * (-1));
+		{
+			String eliminateZero = Double.toString(Double.parseDouble(num));
+			if(eliminateZero.charAt(eliminateZero.length() - 1 ) == '0' && eliminateZero.charAt(eliminateZero.length() - 2 ) =='.')
+			{
+				eliminateZero = Double.toString(Double.parseDouble(eliminateZero) * (-1));
+				eliminateZero = eliminateZero.substring(0, eliminateZero.length() - 2);
+			}
+			else
+			{
+				eliminateZero = Double.toString(Double.parseDouble(eliminateZero) * (-1));
+			}
+			return eliminateZero;
+		}
 		else
 			return "0";
 	}
