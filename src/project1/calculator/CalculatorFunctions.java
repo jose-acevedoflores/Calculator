@@ -32,6 +32,12 @@ public class CalculatorFunctions {
 		secondInputReady = true;
 		return Double.toString(1 / (Double.parseDouble(num)));
 	}
+	
+	public String signChange(String num)
+	{
+		
+		return Double.toString(Double.parseDouble(num) * (-1));
+	}
 
 	/**
 	 * Gets the last button the user pressed.
