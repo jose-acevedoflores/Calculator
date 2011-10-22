@@ -515,47 +515,47 @@ public class CalculatorButtonsV01 implements ActionListener, KeyListener {
 			buttons[0].doClick();
 		}
 		
-		else if(arg0.getKeyCode() == KeyEvent.VK_1 || arg0.getKeyCode() == KeyEvent.VK_NUMPAD0)
+		else if(arg0.getKeyCode() == KeyEvent.VK_1 || arg0.getKeyCode() == KeyEvent.VK_NUMPAD1)
 		{
 			buttons[1].doClick();
 		}
 		
-		else if(arg0.getKeyCode() == KeyEvent.VK_2 && !arg0.isShiftDown() || arg0.getKeyCode() == KeyEvent.VK_NUMPAD0)
+		else if(arg0.getKeyCode() == KeyEvent.VK_2 && !arg0.isShiftDown() || arg0.getKeyCode() == KeyEvent.VK_NUMPAD2)
 		{
 			buttons[2].doClick();
 		}
 		
-		else if(arg0.getKeyCode() == KeyEvent.VK_3 || arg0.getKeyCode() == KeyEvent.VK_NUMPAD0)
+		else if(arg0.getKeyCode() == KeyEvent.VK_3 || arg0.getKeyCode() == KeyEvent.VK_NUMPAD2)
 		{
 			buttons[3].doClick();
 		}
 		
-		else if(arg0.getKeyCode() == KeyEvent.VK_4 || arg0.getKeyCode() == KeyEvent.VK_NUMPAD0)
+		else if(arg0.getKeyCode() == KeyEvent.VK_4 || arg0.getKeyCode() == KeyEvent.VK_NUMPAD4)
 		{
 			buttons[4].doClick();
 		}
 		
-		else if(arg0.getKeyCode() == KeyEvent.VK_5 && !arg0.isShiftDown() || arg0.getKeyCode() == KeyEvent.VK_NUMPAD0)
+		else if(arg0.getKeyCode() == KeyEvent.VK_5 && !arg0.isShiftDown() || arg0.getKeyCode() == KeyEvent.VK_NUMPAD5)
 		{
 			buttons[5].doClick();
 		}
 		
-		else if(arg0.getKeyCode() == KeyEvent.VK_6 || arg0.getKeyCode() == KeyEvent.VK_NUMPAD0)
+		else if(arg0.getKeyCode() == KeyEvent.VK_6 || arg0.getKeyCode() == KeyEvent.VK_NUMPAD6)
 		{
 			buttons[6].doClick();
 		}
 		
-		else if(arg0.getKeyCode() == KeyEvent.VK_7 || arg0.getKeyCode() == KeyEvent.VK_NUMPAD0)
+		else if(arg0.getKeyCode() == KeyEvent.VK_7 || arg0.getKeyCode() == KeyEvent.VK_NUMPAD7)
 		{
 			buttons[7].doClick();
 		}
 		
-		else if(arg0.getKeyCode() == KeyEvent.VK_8 && !arg0.isShiftDown() || arg0.getKeyCode() == KeyEvent.VK_NUMPAD0)
+		else if(arg0.getKeyCode() == KeyEvent.VK_8 && !arg0.isShiftDown() || arg0.getKeyCode() == KeyEvent.VK_NUMPAD8)
 		{
 			buttons[8].doClick();
 		}
 		
-		else if(arg0.getKeyCode() == KeyEvent.VK_9 || arg0.getKeyCode() == KeyEvent.VK_NUMPAD0)
+		else if(arg0.getKeyCode() == KeyEvent.VK_9 || arg0.getKeyCode() == KeyEvent.VK_NUMPAD9)
 		{
 			buttons[9].doClick();
 		}
