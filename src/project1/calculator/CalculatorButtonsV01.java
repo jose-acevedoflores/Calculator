@@ -500,7 +500,7 @@ public class CalculatorButtonsV01 implements ActionListener, KeyListener {
 			buttons[10].doClick();
 		}
 		
-		else if(arg0.getKeyCode() == KeyEvent.VK_ASTERISK)
+		else if(arg0.getKeyCode() == KeyEvent.VK_8 && arg0.isShiftDown())
 		{
 			buttons[11].doClick();
 		}
@@ -535,7 +535,6 @@ public class CalculatorButtonsV01 implements ActionListener, KeyListener {
 			buttons[26].doClick();
 		}
 	
-			
 		else if(arg0.getKeyCode() == KeyEvent.VK_ADD)
 		{
 			buttons[16].doClick();
