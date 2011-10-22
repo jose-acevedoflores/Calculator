@@ -3,6 +3,7 @@ package project1.calculator;
 public class CalculatorFunctions {
 
 	private String firstInput="q";
+	private boolean dotTyped = false;
 	private String secondInput;
 	private String operator="0";
 	private String lastPressedButton="0";
@@ -143,6 +144,30 @@ public class CalculatorFunctions {
 		secondInputReady = false;
 		return firstInput;
 	}
+	
+	/**
+	 * 
+	 * @return
+	 */
+	public String dotPressed(String currentNumberInDisplay)
+	{
+		if(lastPressedButton.equals("=") 
+				|| lastPressedButton.equals("+") 
+				|| lastPressedButton.equals("-")
+				|| lastPressedButton.equals("/")
+				|| lastPressedButton.equals("*"))
+		{
+			dotTyped = true;
+			return "0.";
+		}
+		else if(dotTyped)
+			return currentNumberInDisplay;
+		else
+		{	
+			dotTyped = true;
+			return currentNumberInDisplay + ".";
+		}
+	}
 
 	/**
 	 * 
@@ -260,6 +285,24 @@ public class CalculatorFunctions {
 	public void setReadyForSecondInput(boolean t)
 	{
 		secondInputReady = t;
+	}
+	
+	/**
+	 * 
+	 * @return
+	 */
+	public boolean isDotTyped()
+	{
+		return dotTyped;
+	}
+	
+	/**
+	 * 
+	 * @param t
+	 */
+	public void setDotTyped(boolean t)
+	{
+		dotTyped = t;
 	}
 	
 	

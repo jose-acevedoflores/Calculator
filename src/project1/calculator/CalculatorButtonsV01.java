@@ -385,7 +385,8 @@ public class CalculatorButtonsV01 implements ActionListener, KeyListener {
 			
 			
 			else if(calcFunctions.getLastPressedButton().equals("=") ||calcFunctions.getLastPressedButton().equals("sqrt") 
-					||calcFunctions.getLastPressedButton().equals("inverse") )
+					||	calcFunctions.getLastPressedButton().equals("inverse") 
+					|| calcFunctions.getFirstInput().equals("q"))
 			{
 				double temporary=0;
 				if(calcFunctions.getLastPressedButton().equals("sqrt") ||calcFunctions.getLastPressedButton().equals("inverse") )
@@ -411,14 +412,23 @@ public class CalculatorButtonsV01 implements ActionListener, KeyListener {
 			
 			else 
 			{
+					
 				calcFunctions.setSecondInput(txtField.getText() );
 				calcFunctions.compute(calcFunctions.getFirstInput(), calcFunctions.getSecondInput() );
 				calcFunctions.setLastResult(calcFunctions.getFirstInput());
 				calcFunctions.setFirstInput("q");
 				txtField.setText(calcFunctions.getLastResult());
 				calcFunctions.setReadyForSecondInput(false);
+				calcFunctions.setDotTyped(false);
 			}
 			calcFunctions.setLastPressedButton("=");
+		}
+		
+		// . (dot) button
+		else if(e.getSource() == buttons[18])
+		{
+			txtField.setText(calcFunctions.dotPressed(txtField.getText()));
+			calcFunctions.setLastPressedButton(".");
 		}
 		
 		// +/-
@@ -461,6 +471,7 @@ public class CalculatorButtonsV01 implements ActionListener, KeyListener {
 			calcFunctions.setOperator("0");
 			calcFunctions.setSecondInput("0");
 			calcFunctions.setReadyForSecondInput(false);
+			calcFunctions.setDotTyped(false);
 		}
 		
 	}
