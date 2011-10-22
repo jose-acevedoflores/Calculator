@@ -297,8 +297,34 @@ public class CalculatorButtonsV01Test {
 				
 				);
 		
-		}
+
+		frameTest.dispose();
+	}
+
 	
+	@Test
+	public void testInverse()
+	{
+		c.addGUIToFrame(frameTest);
+		
+		c.buttons[3].doClick();
+		c.buttons[0].doClick();
+		c.buttons[2].doClick();
+		c.buttons[10].doClick(); // Division button
+		c.buttons[5].doClick();
+		c.buttons[0].doClick();
+		c.buttons[12].doClick(); // Inverse
+		c.buttons[16].doClick(); // plus button
+		c.buttons[8].doClick(); // 8
+		c.buttons[17].doClick(); // Equals button.
+		
+		assertTrue(
+				
+				Math.abs(Double.parseDouble(c.txtField.getText() )
+						-  15108) < 1e-6
+						
+				);
+	}
 	
 
 }

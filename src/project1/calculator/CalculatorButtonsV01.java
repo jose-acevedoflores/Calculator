@@ -366,10 +366,11 @@ public class CalculatorButtonsV01 implements ActionListener, KeyListener {
 				txtField.setText(txtField.getText());
 			
 			
-			else if(calcFunctions.getLastPressedButton().equals("=") ||calcFunctions.getLastPressedButton().equals("sqrt") )
+			else if(calcFunctions.getLastPressedButton().equals("=") ||calcFunctions.getLastPressedButton().equals("sqrt") 
+					||calcFunctions.getLastPressedButton().equals("inverse") )
 			{
 				double temporary=0;
-				if(calcFunctions.getLastPressedButton().equals("sqrt"))
+				if(calcFunctions.getLastPressedButton().equals("sqrt") ||calcFunctions.getLastPressedButton().equals("inverse") )
 				{
 					calcFunctions.setSecondInput(txtField.getText());
 				}
@@ -506,7 +507,7 @@ public class CalculatorButtonsV01 implements ActionListener, KeyListener {
 			buttons[10].doClick();
 		}
 		
-		else if(arg0.getKeyCode() == KeyEvent.VK_ASTERISK)
+		else if(arg0.getKeyCode() == KeyEvent.VK_8 && arg0.isShiftDown())
 		{
 			buttons[11].doClick();
 		}
@@ -547,7 +548,7 @@ public class CalculatorButtonsV01 implements ActionListener, KeyListener {
 			buttons[26].doClick();
 		}
 	
-		
+
 		else if(arg0.getKeyCode() == KeyEvent.VK_EQUALS && arg0.isShiftDown())
 		{
 			buttons[16].doClick();
