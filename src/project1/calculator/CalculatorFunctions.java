@@ -33,10 +33,17 @@ public class CalculatorFunctions {
 		return Double.toString(1 / (Double.parseDouble(num)));
 	}
 	
+	/**
+	 * Multiplies by minus one.
+	 * @param num the number to be multiplied by minus one.
+	 * @return the number multiplied by one.
+	 */
 	public String signChange(String num)
 	{
-		
-		return Double.toString(Double.parseDouble(num) * (-1));
+		if(!num.equals("0"))
+			return Double.toString(Double.parseDouble(num) * (-1));
+		else
+			return "0";
 	}
 
 	/**
