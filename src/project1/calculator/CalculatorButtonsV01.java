@@ -624,7 +624,6 @@ public class CalculatorButtonsV01 implements ActionListener, KeyListener {
 		{
 			buttons[26].doClick();
 		}
-	
 
 			
 	}
