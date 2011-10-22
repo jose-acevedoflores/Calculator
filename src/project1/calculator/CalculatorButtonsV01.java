@@ -31,6 +31,7 @@ public class CalculatorButtonsV01 implements ActionListener, KeyListener {
 			buttons[i] = new JButton(Integer.toString(i));
 		}
 		
+		//Starts from for loop ends (10);
 		String[] buttonText = {"/", "*","1/x","%", "sqrt", "-","+","=",".","+/-",
 				"MC","MR","MS","M+", "Backspace","CE", "C"};
 		
@@ -301,6 +302,8 @@ public class CalculatorButtonsV01 implements ActionListener, KeyListener {
 			calcFunctions.setReadyForSecondInput(true);
 		}
 		
+		//Esc = C button
+		
 		// Division
 		else if(e.getSource() == buttons[10])
 		{
@@ -315,6 +318,16 @@ public class CalculatorButtonsV01 implements ActionListener, KeyListener {
 			String result = calcFunctions.multPressed(txtField.getText());
 			txtField.setText(result);
 			calcFunctions.setLastPressedButton("*");
+		}
+		
+		//Inverse
+		else if (e.getSource() == buttons[12])
+		{
+			calcFunctions.setLastPressedButton("inverse");
+			if(txtField.getText().equals("inverse"))
+				txtField.setText("0");
+			else if(txtField.getText().length() != 0)
+				txtField.setText(calcFunctions.inverse(txtField.getText()));
 		}
 		
 		// Square root
@@ -476,6 +489,25 @@ public class CalculatorButtonsV01 implements ActionListener, KeyListener {
 			buttons[17].doClick();
 		}
 		
+		else if(arg0.getKeyCode() == KeyEvent.VK_R)
+		{
+			buttons[12].doClick();
+		}
+		
+		else if(arg0.getKeyCode() == KeyEvent.VK_BACK_SPACE)
+		{
+			buttons[24].doClick();
+		}
+		
+		else if(arg0.getKeyCode() == KeyEvent.VK_DELETE)
+		{
+			buttons[25].doClick();
+		}
+			
+		else if(arg0.getKeyCode() == KeyEvent.VK_ESCAPE)
+		{
+			buttons[26].doClick();
+		}
 	}
 
 	public void keyReleased(KeyEvent arg0) {
