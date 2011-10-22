@@ -29,6 +29,7 @@ public class CalculatorFunctions {
 	 */
 	public String inverse(String num)
 	{
+		secondInputReady = true;
 		return Double.toString(1 / (Double.parseDouble(num)));
 	}
 
