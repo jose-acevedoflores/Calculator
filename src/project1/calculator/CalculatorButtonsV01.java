@@ -489,6 +489,25 @@ public class CalculatorButtonsV01 implements ActionListener, KeyListener {
 			buttons[17].doClick();
 		}
 		
+		else if(arg0.getKeyCode() == KeyEvent.VK_R)
+		{
+			buttons[12].doClick();
+		}
+		
+		else if(arg0.getKeyCode() == KeyEvent.VK_BACK_SPACE)
+		{
+			buttons[24].doClick();
+		}
+		
+		else if(arg0.getKeyCode() == KeyEvent.VK_DELETE)
+		{
+			buttons[25].doClick();
+		}
+			
+		else if(arg0.getKeyCode() == KeyEvent.VK_ESCAPE)
+		{
+			buttons[26].doClick();
+		}
 	}
 
 	public void keyReleased(KeyEvent arg0) {
