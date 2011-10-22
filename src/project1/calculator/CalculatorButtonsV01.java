@@ -373,6 +373,7 @@ public class CalculatorButtonsV01 implements ActionListener, KeyListener {
 				{
 					calcFunctions.setSecondInput(txtField.getText());
 				}
+				
 				if(calcFunctions.getOperator().equals("+"))
 					temporary = Double.parseDouble(calcFunctions.getLastResult()) + Double.parseDouble(calcFunctions.getSecondInput());
 				
