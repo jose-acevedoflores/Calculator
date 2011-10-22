@@ -510,52 +510,52 @@ public class CalculatorButtonsV01 implements ActionListener, KeyListener {
 	//Action listeners implementation
 	public void keyPressed(KeyEvent arg0) 
 	{
-		if(arg0.getKeyCode() == KeyEvent.VK_0)
+		if(arg0.getKeyCode() == KeyEvent.VK_0 || arg0.getKeyCode() == KeyEvent.VK_NUMPAD0)
 		{	
 			buttons[0].doClick();
 		}
 		
-		else if(arg0.getKeyCode() == KeyEvent.VK_1)
+		else if(arg0.getKeyCode() == KeyEvent.VK_1 || arg0.getKeyCode() == KeyEvent.VK_NUMPAD0)
 		{
 			buttons[1].doClick();
 		}
 		
-		else if(arg0.getKeyCode() == KeyEvent.VK_2 && !arg0.isShiftDown())
+		else if(arg0.getKeyCode() == KeyEvent.VK_2 && !arg0.isShiftDown() || arg0.getKeyCode() == KeyEvent.VK_NUMPAD0)
 		{
 			buttons[2].doClick();
 		}
 		
-		else if(arg0.getKeyCode() == KeyEvent.VK_3)
+		else if(arg0.getKeyCode() == KeyEvent.VK_3 || arg0.getKeyCode() == KeyEvent.VK_NUMPAD0)
 		{
 			buttons[3].doClick();
 		}
 		
-		else if(arg0.getKeyCode() == KeyEvent.VK_4)
+		else if(arg0.getKeyCode() == KeyEvent.VK_4 || arg0.getKeyCode() == KeyEvent.VK_NUMPAD0)
 		{
 			buttons[4].doClick();
 		}
 		
-		else if(arg0.getKeyCode() == KeyEvent.VK_5 && !arg0.isShiftDown())
+		else if(arg0.getKeyCode() == KeyEvent.VK_5 && !arg0.isShiftDown() || arg0.getKeyCode() == KeyEvent.VK_NUMPAD0)
 		{
 			buttons[5].doClick();
 		}
 		
-		else if(arg0.getKeyCode() == KeyEvent.VK_6)
+		else if(arg0.getKeyCode() == KeyEvent.VK_6 || arg0.getKeyCode() == KeyEvent.VK_NUMPAD0)
 		{
 			buttons[6].doClick();
 		}
 		
-		else if(arg0.getKeyCode() == KeyEvent.VK_7)
+		else if(arg0.getKeyCode() == KeyEvent.VK_7 || arg0.getKeyCode() == KeyEvent.VK_NUMPAD0)
 		{
 			buttons[7].doClick();
 		}
 		
-		else if(arg0.getKeyCode() == KeyEvent.VK_8 && !arg0.isShiftDown())
+		else if(arg0.getKeyCode() == KeyEvent.VK_8 && !arg0.isShiftDown() || arg0.getKeyCode() == KeyEvent.VK_NUMPAD0)
 		{
 			buttons[8].doClick();
 		}
 		
-		else if(arg0.getKeyCode() == KeyEvent.VK_9)
+		else if(arg0.getKeyCode() == KeyEvent.VK_9 || arg0.getKeyCode() == KeyEvent.VK_NUMPAD0)
 		{
 			buttons[9].doClick();
 		}
@@ -565,12 +565,6 @@ public class CalculatorButtonsV01 implements ActionListener, KeyListener {
 			buttons[10].doClick();
 		}
 		
-		else if(arg0.getKeyCode() == KeyEvent.VK_8 && arg0.isShiftDown())
-		{
-			buttons[11].doClick();
-		}
-		
-
 		else if(arg0.getKeyCode() == KeyEvent.VK_8 && arg0.isShiftDown())
 		{
 			buttons[11].doClick();
@@ -591,36 +585,36 @@ public class CalculatorButtonsV01 implements ActionListener, KeyListener {
 			buttons[14].doClick();
 		}
 		
-		else if(arg0.getKeyCode() == KeyEvent.VK_MINUS)
+		else if(arg0.getKeyCode() == KeyEvent.VK_MINUS || arg0.getKeyCode() == KeyEvent.VK_SUBTRACT)
 		{
 			buttons[15].doClick();
 		}
 		
-		else if(arg0.getKeyCode() == KeyEvent.VK_SUBTRACT)
+		/*else if(arg0.getKeyCode() == KeyEvent.VK_SUBTRACT)
 		{
 			buttons[15].doClick();
-		}
+		}*/
 		
 
-		else if(arg0.getKeyCode() == KeyEvent.VK_EQUALS && arg0.isShiftDown())
+		else if(arg0.getKeyCode() == KeyEvent.VK_ADD || arg0.getKeyCode() == KeyEvent.VK_EQUALS && arg0.isShiftDown())
 		{
 			buttons[16].doClick();
 		}
 		
-		else if(arg0.getKeyCode() == KeyEvent.VK_ADD)
+		/*else if(arg0.getKeyCode() == KeyEvent.VK_ADD)
 		{
 			buttons[16].doClick();
-		}
+		}*/
 		
-		else if(arg0.getKeyCode() == KeyEvent.VK_ENTER)
+		else if(arg0.getKeyCode() == KeyEvent.VK_ENTER || arg0.getKeyCode() == KeyEvent.VK_EQUALS && !arg0.isShiftDown())
 		{
 			buttons[17].doClick();
 		}
 
-		else if(arg0.getKeyCode() == KeyEvent.VK_EQUALS && !arg0.isShiftDown())
+		/*else if(arg0.getKeyCode() == KeyEvent.VK_EQUALS && !arg0.isShiftDown())
 		{
 			buttons[17].doClick();
-		}
+		}*/
 		
 		else if(arg0.getKeyCode() == KeyEvent.VK_PERIOD)
 		{
