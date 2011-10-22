@@ -214,6 +214,29 @@ public class CalculatorButtonsV01Test {
 					+	7.622035527 ) < 1e-6
 				);
 		
+		c.buttons[26].doClick(); // Clear button
+		c.buttons[3].doClick(); // 3 button
+		c.buttons[16].doClick();// plus button
+		c.buttons[6].doClick(); // 6 button
+		c.buttons[17].doClick(); // Equals button.
+		c.buttons[14].doClick(); // sqrt button
+		c.buttons[17].doClick(); // Equals button.
+		
+		assertTrue(
+				
+
+				Math.abs(Double.parseDouble(c.txtField.getText()) 
+					-	12) < 1e-6
+				
+				);
+		
+		c.buttons[17].doClick(); // Equals button.
+		assertTrue(
+				
+				Math.abs(Double.parseDouble(c.txtField.getText()) 
+					-	15) < 1e-6
+				
+				);
 		
 	}
 	
