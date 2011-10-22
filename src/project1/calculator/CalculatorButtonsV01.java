@@ -11,6 +11,7 @@ import javax.swing.JPanel;
 import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.InputEvent;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 
@@ -494,9 +495,29 @@ public class CalculatorButtonsV01 implements ActionListener, KeyListener {
 			buttons[17].doClick();
 		}
 		
+		else if(arg0.getKeyCode() == KeyEvent.VK_SLASH)
+		{
+			buttons[10].doClick();
+		}
+		
+		else if(arg0.getKeyCode() == KeyEvent.VK_ASTERISK)
+		{
+			buttons[11].doClick();
+		}
+		
 		else if(arg0.getKeyCode() == KeyEvent.VK_R)
 		{
 			buttons[12].doClick();
+		}
+		
+		else if(arg0.getKeyCode() == KeyEvent.VK_AT)
+		{
+			buttons[14].doClick();
+		}
+		
+		else if(arg0.getKeyCode() == KeyEvent.VK_SUBTRACT)
+		{
+			buttons[15].doClick();
 		}
 		
 		else if(arg0.getKeyCode() == KeyEvent.VK_BACK_SPACE)
@@ -513,6 +534,13 @@ public class CalculatorButtonsV01 implements ActionListener, KeyListener {
 		{
 			buttons[26].doClick();
 		}
+	
+			
+		else if(arg0.getKeyCode() == KeyEvent.VK_ADD)
+		{
+			buttons[16].doClick();
+		}
+			
 	}
 
 	public void keyReleased(KeyEvent arg0) {

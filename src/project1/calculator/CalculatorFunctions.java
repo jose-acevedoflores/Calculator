@@ -250,17 +250,4 @@ public class CalculatorFunctions {
 	}
 	
 	
-	
-
-	
-
-	/**
-	 * Multiplication Prototype
-	 */
-	/*public operation(){
-		double multiplication = Double.parseDouble(firstInput) * Double.parseDouble(secondInput);
-
-		return Double.toString(multiplication);
-	}*/
-
 }
