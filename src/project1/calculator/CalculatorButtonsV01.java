@@ -490,6 +490,11 @@ public class CalculatorButtonsV01 implements ActionListener, KeyListener {
 			buttons[17].doClick();
 		}
 		
+		else if(arg0.getKeyCode() == KeyEvent.VK_SLASH)
+		{
+			buttons[10].doClick();
+		}
+		
 		else if(arg0.getKeyCode() == KeyEvent.VK_ASTERISK)
 		{
 			buttons[11].doClick();
@@ -498,6 +503,16 @@ public class CalculatorButtonsV01 implements ActionListener, KeyListener {
 		else if(arg0.getKeyCode() == KeyEvent.VK_R)
 		{
 			buttons[12].doClick();
+		}
+		
+		else if(arg0.getKeyCode() == KeyEvent.VK_AT)
+		{
+			buttons[14].doClick();
+		}
+		
+		else if(arg0.getKeyCode() == KeyEvent.VK_SUBTRACT)
+		{
+			buttons[15].doClick();
 		}
 		
 		else if(arg0.getKeyCode() == KeyEvent.VK_BACK_SPACE)
@@ -520,7 +535,6 @@ public class CalculatorButtonsV01 implements ActionListener, KeyListener {
 		{
 			buttons[16].doClick();
 		}
-		
 			
 	}
 
