@@ -19,8 +19,6 @@ public class CalculatorFunctions {
 	public String sqrt(String num)
 	{ 
 		secondInputReady = true;
-		if(firstInput.equals("q"))
-			firstInput = num;
 		return Double.toString(Math.sqrt(Double.parseDouble(num)));
 	}
 
@@ -59,7 +57,7 @@ public class CalculatorFunctions {
 	 */
 	public String sumPressed(String currentNumberInDisplay)
 	{
-		if(!firstInput.equals("q") && secondInputReady == true && !lastPressedButton.equals("sqrt"))
+		if(!firstInput.equals("q") && secondInputReady == true )
 		{
 			secondInput = currentNumberInDisplay;
 			firstInput = this.compute(firstInput,secondInput);
@@ -79,7 +77,7 @@ public class CalculatorFunctions {
 	 */
 	public String minusPressed(String currentNumberInDisplay)
 	{
-		if(!firstInput.equals("q") && secondInputReady == true)
+		if(!firstInput.equals("q") && secondInputReady == true )
 		{
 			secondInput = currentNumberInDisplay;
 			firstInput = this.compute(firstInput,secondInput);
@@ -98,9 +96,9 @@ public class CalculatorFunctions {
 	 * @param currentNumberInDisplay
 	 * @return firstInput
 	 */
-	public String multPressed(String currentNumberInDisplay)
+	public String multPressed(String currentNumberInDisplay )
 	{
-		if(!firstInput.equals("q") && secondInputReady == true)
+		if(!firstInput.equals("q") && secondInputReady == true )
 		{
 			secondInput = currentNumberInDisplay;
 			firstInput = this.compute(firstInput,secondInput);
@@ -118,9 +116,9 @@ public class CalculatorFunctions {
 	 * @param currentNumberInDisplay
 	 * @return firstInput
 	 */
-	public String divPressed(String currentNumberInDisplay)
+	public String divPressed(String currentNumberInDisplay )
 	{
-		if(!firstInput.equals("q") && secondInputReady == true)
+		if(!firstInput.equals("q") && secondInputReady == true )//&& !lastPressedButton.equals("sqrt"))
 		{
 			secondInput = currentNumberInDisplay;
 			firstInput = this.compute(firstInput,secondInput);
