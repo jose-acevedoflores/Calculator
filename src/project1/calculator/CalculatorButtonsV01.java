@@ -590,31 +590,15 @@ public class CalculatorButtonsV01 implements ActionListener, KeyListener {
 			buttons[15].doClick();
 		}
 		
-		/*else if(arg0.getKeyCode() == KeyEvent.VK_SUBTRACT)
-		{
-			buttons[15].doClick();
-		}*/
-		
-
 		else if(arg0.getKeyCode() == KeyEvent.VK_ADD || arg0.getKeyCode() == KeyEvent.VK_EQUALS && arg0.isShiftDown())
 		{
 			buttons[16].doClick();
 		}
 		
-		/*else if(arg0.getKeyCode() == KeyEvent.VK_ADD)
-		{
-			buttons[16].doClick();
-		}*/
-		
 		else if(arg0.getKeyCode() == KeyEvent.VK_ENTER || arg0.getKeyCode() == KeyEvent.VK_EQUALS && !arg0.isShiftDown())
 		{
 			buttons[17].doClick();
 		}
-
-		/*else if(arg0.getKeyCode() == KeyEvent.VK_EQUALS && !arg0.isShiftDown())
-		{
-			buttons[17].doClick();
-		}*/
 		
 		else if(arg0.getKeyCode() == KeyEvent.VK_PERIOD)
 		{
