@@ -398,7 +398,9 @@ public class CalculatorButtonsV01 implements ActionListener, KeyListener {
 
 			{
 				double temporary=0;
-				if(calcFunctions.getLastPressedButton().equals("sqrt") ||calcFunctions.getLastPressedButton().equals("1/x") )
+				if(calcFunctions.getLastPressedButton().equals("sqrt")
+						||calcFunctions.getLastPressedButton().equals("1/x") 
+						||calcFunctions.getLastPressedButton().equals("%") )
 				{
 					calcFunctions.setSecondInput(txtField.getText());
 				}
