@@ -363,8 +363,35 @@ public class CalculatorButtonsV01Test {
 						-  20.49046817359) < 1e-6
 						
 				);
+		frameTest.dispose();
 		
 	}
+		
+		@Test
+		
+		public void testPercent()
+		{
+			c.addGUIToFrame(frameTest);
+			
+			
+			c.buttons[9].doClick();  
+			c.buttons[16].doClick(); // plus button
+			c.buttons[2].doClick(); 
+			c.buttons[1].doClick(); 
+			c.buttons[17].doClick(); // Equals button.
+			c.buttons[13].doClick(); // Percent button
+			
+			assertTrue(
+					
+					Math.abs(Double.parseDouble(c.txtField.getText() )
+							- 9) < 1e-6
+							
+					);
+			
+			
+		}
+		
+	
 	
 
 }
