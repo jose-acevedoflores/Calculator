@@ -581,6 +581,11 @@ public class CalculatorButtonsV01 implements ActionListener, KeyListener {
 			buttons[14].doClick();
 		}
 		
+		else if(arg0.getKeyCode() == KeyEvent.VK_MINUS)
+		{
+			buttons[15].doClick();
+		}
+		
 		else if(arg0.getKeyCode() == KeyEvent.VK_SUBTRACT)
 		{
 			buttons[15].doClick();
