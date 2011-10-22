@@ -343,7 +343,7 @@ public class CalculatorButtonsV01 implements ActionListener, KeyListener {
 		else if (e.getSource() == buttons[12])
 		{
 			calcFunctions.setLastPressedButton("1/x");
-			if(txtField.getText().equals("inverse"))
+			if(txtField.getText().equals("0"))
 				txtField.setText("0");
 			else if(txtField.getText().length() != 0)
 				txtField.setText(calcFunctions.inverse(txtField.getText()));
