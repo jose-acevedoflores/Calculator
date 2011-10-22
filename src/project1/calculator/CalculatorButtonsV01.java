@@ -493,7 +493,7 @@ public class CalculatorButtonsV01 implements ActionListener, KeyListener {
 			txtField.setText("0");
 		}
 		
-		//Clear button
+		//Clear (all) button
 		else if(e.getSource() == buttons[26])
 		{
 			txtField.setText("0");
@@ -608,6 +608,26 @@ public class CalculatorButtonsV01 implements ActionListener, KeyListener {
 		else if(arg0.getKeyCode() == KeyEvent.VK_F9)
 		{
 			buttons[19].doClick();
+		}
+		
+		else if(arg0.getKeyCode() == KeyEvent.VK_L && arg0.isControlDown())
+		{
+			buttons[20].doClick();
+		}
+		
+		else if(arg0.getKeyCode() == KeyEvent.VK_R && arg0.isControlDown())
+		{
+			buttons[21].doClick();
+		}
+		
+		else if(arg0.getKeyCode() == KeyEvent.VK_M && arg0.isControlDown())
+		{
+			buttons[22].doClick();
+		}
+		
+		else if(arg0.getKeyCode() == KeyEvent.VK_P && arg0.isControlDown())
+		{
+			buttons[23].doClick();
 		}
 		
 		else if(arg0.getKeyCode() == KeyEvent.VK_BACK_SPACE)
