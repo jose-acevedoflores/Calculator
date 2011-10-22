@@ -81,6 +81,7 @@ public class CalculatorFunctions {
 		
 		operator = "+";
 		secondInputReady = false;
+		dotTyped = false;
 		return firstInput;
 	}
 	
@@ -100,6 +101,7 @@ public class CalculatorFunctions {
 			firstInput = currentNumberInDisplay;
 		
 		operator = "-";
+		dotTyped = false;
 		secondInputReady = false;
 		return firstInput;
 	
@@ -122,6 +124,7 @@ public class CalculatorFunctions {
 		
 		operator = "*";
 		secondInputReady = false;
+		dotTyped = false;
 		return firstInput;
 	}
 	
@@ -142,6 +145,7 @@ public class CalculatorFunctions {
 		
 		operator = "/";
 		secondInputReady = false;
+		dotTyped = false;
 		return firstInput;
 	}
 	

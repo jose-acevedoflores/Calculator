@@ -404,6 +404,47 @@ public class CalculatorButtonsV01Test {
 							
 					);
 			
+			frameTest.dispose();
+			
+		}
+		
+		@Test 
+		public void testSignChangeAndDot()
+		{
+			c.addGUIToFrame(frameTest);
+			
+			c.buttons[3].doClick();
+			c.buttons[5].doClick();
+			c.buttons[18].doClick();// . button
+			c.buttons[2].doClick();
+			c.buttons[3].doClick();
+			c.buttons[6].doClick();
+			c.buttons[10].doClick(); // Division button
+			c.buttons[1].doClick(); 
+			c.buttons[1].doClick();
+			c.buttons[17].doClick(); // Equals button.
+			
+			assertTrue(
+					
+					Math.abs(Double.parseDouble(c.txtField.getText() )
+							- 3.203272727272727) < 1e-6
+						);
+			
+			c.buttons[12].doClick(); // Inverse
+			c.buttons[14].doClick(); // sqrt button
+			c.buttons[15].doClick();// minus button
+			c.buttons[3].doClick();
+			c.buttons[18].doClick();// . button
+			c.buttons[17].doClick(); // Equals button.
+			
+			
+			assertTrue(
+					
+					Math.abs(Double.parseDouble(c.txtField.getText() )
+							+ 2.4412686475064) < 1e-6
+						);
+			
+			
 		}
 		
 	
