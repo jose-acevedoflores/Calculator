@@ -143,6 +143,27 @@ public class CalculatorFunctions {
 		secondInputReady = false;
 		return firstInput;
 	}
+	
+	/**
+	 * Computes the percentage of the given number.
+	 * @param num percentage number.
+	 * @return
+	 */
+	public String percent(String num)
+	{
+		String result = "";
+		
+		if (operator.equals("0"))
+			result = "0";
+		
+		else if(!firstInput.equals("q"))
+			result = Double.toString((Double.parseDouble(num) / 100) * Double.parseDouble(firstInput));
+		
+		else if (firstInput.equals("q"))
+			result = Double.toString((Double.parseDouble(num) / 100) * Double.parseDouble(lastResult));
+		
+		return result;
+	}
 
 	/**
 	 * 

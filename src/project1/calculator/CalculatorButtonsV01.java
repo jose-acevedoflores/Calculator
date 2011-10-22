@@ -349,6 +349,14 @@ public class CalculatorButtonsV01 implements ActionListener, KeyListener {
 				txtField.setText(calcFunctions.inverse(txtField.getText()));
 		}
 		
+		// Percentage
+		else if (e.getSource() == buttons[13])
+		{
+			calcFunctions.setLastPressedButton("%");
+			if(txtField.getText().length() != 0)
+				txtField.setText(calcFunctions.percent(txtField.getText()));
+		}
+		
 		// Square root
 		else if(e.getSource() == buttons[14])
 		{
@@ -493,7 +501,7 @@ public class CalculatorButtonsV01 implements ActionListener, KeyListener {
 			buttons[4].doClick();
 		}
 		
-		else if(arg0.getKeyCode() == KeyEvent.VK_5)
+		else if(arg0.getKeyCode() == KeyEvent.VK_5 && !arg0.isShiftDown())
 		{
 			buttons[5].doClick();
 		}
@@ -547,6 +555,11 @@ public class CalculatorButtonsV01 implements ActionListener, KeyListener {
 		else if(arg0.getKeyCode() == KeyEvent.VK_R)
 		{
 			buttons[12].doClick();
+		}
+		
+		else if(arg0.getKeyCode() == KeyEvent.VK_5 && arg0.isShiftDown())
+		{
+			buttons[13].doClick();
 		}
 		
 		else if(arg0.getKeyCode() == KeyEvent.VK_AT)
