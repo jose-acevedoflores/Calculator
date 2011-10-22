@@ -16,6 +16,7 @@ import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 
 import javax.swing.*;
+import javax.swing.border.BevelBorder;
 
 public class CalculatorButtonsV01 implements ActionListener, KeyListener {
 	
@@ -23,6 +24,7 @@ public class CalculatorButtonsV01 implements ActionListener, KeyListener {
 	public JButton[] buttons = new JButton[27];
 	public JTextField txtField = new JTextField(36);
 	public CalculatorFunctions calcFunctions;
+	private JLabel memoryLabel; 
 	
 	public CalculatorButtonsV01(CalculatorFunctions f)
 	{
@@ -70,7 +72,12 @@ public class CalculatorButtonsV01 implements ActionListener, KeyListener {
 		JPanel numberGrid4 = new JPanel(new FlowLayout());
 		JPanel clearButtonsRow = new JPanel(new FlowLayout());
 		
-		clearButtonsRow.add(Box.createRigidArea(new Dimension(70,0)));//Empty area to make the backspace button move to the right. 
+		memoryLabel = new JLabel();
+		memoryLabel.setPreferredSize(new Dimension(60,40));
+		memoryLabel.setMaximumSize(memoryLabel.getPreferredSize());
+		memoryLabel.setBorder(new BevelBorder(BevelBorder.LOWERED));
+		clearButtonsRow.add(memoryLabel);
+		clearButtonsRow.add(Box.createRigidArea(new Dimension(10,0)));//Empty area to move the backspace row (align) 
 		clearButtonsRow.add(buttons[24]);
 		clearButtonsRow.add(buttons[25]);
 		clearButtonsRow.add(buttons[26]);
@@ -450,6 +457,12 @@ public class CalculatorButtonsV01 implements ActionListener, KeyListener {
 				txtField.setText(calcFunctions.signChange(txtField.getText()));
 		}
 		
+		// MS button 
+		else if(e.getSource() == buttons[22])
+		{
+			memoryLabel.setText("      M");
+		}
+		
 		//Backspace
 		else if(e.getSource() == buttons[24]) 
 		{
@@ -465,6 +478,10 @@ public class CalculatorButtonsV01 implements ActionListener, KeyListener {
 			else//(txtField.getText().length() != 0)
 			{
 				String currentlyInTextField = txtField.getText(); 
+				if(currentlyInTextField.charAt(currentlyInTextField.length() - 1) == '.')
+				{
+					calcFunctions.setDotTyped(false);
+				}
 				txtField.setText(currentlyInTextField.substring(0, currentlyInTextField.length()-1));
 			}
 			
