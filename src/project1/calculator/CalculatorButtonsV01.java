@@ -366,10 +366,11 @@ public class CalculatorButtonsV01 implements ActionListener, KeyListener {
 				txtField.setText(txtField.getText());
 			
 			
-			else if(calcFunctions.getLastPressedButton().equals("=") ||calcFunctions.getLastPressedButton().equals("sqrt") )
+			else if(calcFunctions.getLastPressedButton().equals("=") ||calcFunctions.getLastPressedButton().equals("sqrt") 
+					||calcFunctions.getLastPressedButton().equals("inverse") )
 			{
 				double temporary=0;
-				if(calcFunctions.getLastPressedButton().equals("sqrt"))
+				if(calcFunctions.getLastPressedButton().equals("sqrt") ||calcFunctions.getLastPressedButton().equals("inverse") )
 				{
 					calcFunctions.setSecondInput(txtField.getText());
 				}
