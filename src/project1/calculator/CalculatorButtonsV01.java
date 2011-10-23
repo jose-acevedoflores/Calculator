@@ -580,7 +580,7 @@ public class CalculatorButtonsV01 implements ActionListener, KeyListener {
 	}
 	
 	/**
-	 * 
+	 * Resets the number in the screen to the last number pressed.
 	 * @return
 	 */
 	public boolean checkReset()
