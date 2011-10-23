@@ -427,143 +427,90 @@ public class CalculatorButtonsV01 implements ActionListener, KeyListener {
 		
 	}
 
-	//Action listeners implementation
+	//Key listeners implementation
 	public void keyPressed(KeyEvent arg0) 
 	{
+		
 		if(arg0.getKeyCode() == KeyEvent.VK_0 || arg0.getKeyCode() == KeyEvent.VK_NUMPAD0)
-		{	
 			buttons[0].doClick();
-		}
 		
 		else if(arg0.getKeyCode() == KeyEvent.VK_1 || arg0.getKeyCode() == KeyEvent.VK_NUMPAD1)
-		{
 			buttons[1].doClick();
-		}
 		
 		else if(arg0.getKeyCode() == KeyEvent.VK_2 && !arg0.isShiftDown() || arg0.getKeyCode() == KeyEvent.VK_NUMPAD2)
-		{
 			buttons[2].doClick();
-		}
 		
 		else if(arg0.getKeyCode() == KeyEvent.VK_3 || arg0.getKeyCode() == KeyEvent.VK_NUMPAD2)
-		{
 			buttons[3].doClick();
-		}
 		
 		else if(arg0.getKeyCode() == KeyEvent.VK_4 || arg0.getKeyCode() == KeyEvent.VK_NUMPAD4)
-		{
 			buttons[4].doClick();
-		}
 		
 		else if(arg0.getKeyCode() == KeyEvent.VK_5 && !arg0.isShiftDown() || arg0.getKeyCode() == KeyEvent.VK_NUMPAD5)
-		{
 			buttons[5].doClick();
-		}
 		
 		else if(arg0.getKeyCode() == KeyEvent.VK_6 || arg0.getKeyCode() == KeyEvent.VK_NUMPAD6)
-		{
 			buttons[6].doClick();
-		}
 		
 		else if(arg0.getKeyCode() == KeyEvent.VK_7 || arg0.getKeyCode() == KeyEvent.VK_NUMPAD7)
-		{
 			buttons[7].doClick();
-		}
 		
 		else if(arg0.getKeyCode() == KeyEvent.VK_8 && !arg0.isShiftDown() || arg0.getKeyCode() == KeyEvent.VK_NUMPAD8)
-		{
 			buttons[8].doClick();
-		}
 		
 		else if(arg0.getKeyCode() == KeyEvent.VK_9 || arg0.getKeyCode() == KeyEvent.VK_NUMPAD9)
-		{
 			buttons[9].doClick();
-		}
 		
 		else if(arg0.getKeyCode() == KeyEvent.VK_SLASH)
-		{
 			buttons[10].doClick();
-		}
 		
 		else if(arg0.getKeyCode() == KeyEvent.VK_8 && arg0.isShiftDown())
-		{
 			buttons[11].doClick();
-		}
 		
 		else if(arg0.getKeyCode() == KeyEvent.VK_R)
-		{
 			buttons[12].doClick();
-		}
 		
 		else if(arg0.getKeyCode() == KeyEvent.VK_5 && arg0.isShiftDown())
-		{
 			buttons[13].doClick();
-		}
 		
 		else if(arg0.getKeyCode() == KeyEvent.VK_2 && arg0.isShiftDown())
-		{
 			buttons[14].doClick();
-		}
 		
 		else if(arg0.getKeyCode() == KeyEvent.VK_MINUS || arg0.getKeyCode() == KeyEvent.VK_SUBTRACT)
-		{
 			buttons[15].doClick();
-		}
 		
 		else if(arg0.getKeyCode() == KeyEvent.VK_ADD || arg0.getKeyCode() == KeyEvent.VK_EQUALS && arg0.isShiftDown())
-		{
 			buttons[16].doClick();
-		}
 		
 		else if(arg0.getKeyCode() == KeyEvent.VK_ENTER || arg0.getKeyCode() == KeyEvent.VK_EQUALS && !arg0.isShiftDown())
-		{
 			buttons[17].doClick();
-		}
 		
 		else if(arg0.getKeyCode() == KeyEvent.VK_PERIOD)
-		{
 			buttons[18].doClick();
-		}
 		
 		else if(arg0.getKeyCode() == KeyEvent.VK_F9)
-		{
 			buttons[19].doClick();
-		}
 		
 		else if(arg0.getKeyCode() == KeyEvent.VK_L && arg0.isControlDown())
-		{
 			buttons[20].doClick();
-		}
 		
 		else if(arg0.getKeyCode() == KeyEvent.VK_R && arg0.isControlDown())
-		{
 			buttons[21].doClick();
-		}
 		
 		else if(arg0.getKeyCode() == KeyEvent.VK_M && arg0.isControlDown())
-		{
 			buttons[22].doClick();
-		}
 		
 		else if(arg0.getKeyCode() == KeyEvent.VK_P && arg0.isControlDown())
-		{
 			buttons[23].doClick();
-		}
 		
 		else if(arg0.getKeyCode() == KeyEvent.VK_BACK_SPACE)
-		{
 			buttons[24].doClick();
-		}
 		
 		else if(arg0.getKeyCode() == KeyEvent.VK_DELETE)
-		{
 			buttons[25].doClick();
-		}
 			
 		else if(arg0.getKeyCode() == KeyEvent.VK_ESCAPE)
-		{
 			buttons[26].doClick();
-		}
 
 			
 	}
