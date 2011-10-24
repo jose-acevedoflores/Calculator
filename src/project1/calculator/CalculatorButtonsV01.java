@@ -18,6 +18,10 @@ import java.awt.event.KeyListener;
 import javax.swing.*;
 import javax.swing.border.BevelBorder;
 
+/**
+ * @author 
+ *
+ */
 public class CalculatorButtonsV01 implements ActionListener, KeyListener {
 	
 	//Public for testing
@@ -27,6 +31,7 @@ public class CalculatorButtonsV01 implements ActionListener, KeyListener {
 	private JLabel memoryLabel; 
 	
 	/**
+	 * Creates the buttons used to operate the calculator.
 	 * @param f
 	 */
 	public CalculatorButtonsV01(CalculatorFunctions f)
@@ -41,6 +46,7 @@ public class CalculatorButtonsV01 implements ActionListener, KeyListener {
 		String[] buttonText = {"/", "*","1/x","%", "sqrt", "-","+","=",".","+/-",
 				"MC","MR","MS","M+", "Backspace","CE", "C"};
 		
+		//Creates /, * ,1/x, %, sqrt, -, +, =, ., +/-, MC, MR, MS, M+, Backspace, CE, C buttons.
 		for(int u = 10; u < 27 ; u++)
 		{
 			buttons[u] = new JButton(buttonText[u-10]);
@@ -54,7 +60,7 @@ public class CalculatorButtonsV01 implements ActionListener, KeyListener {
 	}
 	
 	/**
-	 * 
+	 * Creates a frame in which each of the components of the calculator will be displayed.
 	 * @param frame
 	 */
 	public void addGUIToFrame(JFrame frame)
@@ -140,7 +146,7 @@ public class CalculatorButtonsV01 implements ActionListener, KeyListener {
 
 	
 	/**
-	 * Calls the appropriate CalculatorFunctions based on the input. 
+	 * Calls the appropriate CalculatorFunctions based on input. 
 	 */
 	public void actionPerformed(ActionEvent e) {
 		//Number 0
@@ -421,7 +427,8 @@ public class CalculatorButtonsV01 implements ActionListener, KeyListener {
 			}
 			else if(txtField.getText().length() == 1)
 				txtField.setText("0");
-			else//(txtField.getText().length() != 0)
+			
+			else
 			{
 				String currentlyInTextField = txtField.getText(); 
 				if(currentlyInTextField.charAt(currentlyInTextField.length() - 1) == '.')
@@ -455,101 +462,128 @@ public class CalculatorButtonsV01 implements ActionListener, KeyListener {
 
 	
 	/**
-	 * 
+	 * Enables keyboard features.
 	 */
 	public void keyPressed(KeyEvent arg0) 
 	{
-		
+		// 0 button
 		if(arg0.getKeyCode() == KeyEvent.VK_0 || arg0.getKeyCode() == KeyEvent.VK_NUMPAD0)
 			buttons[0].doClick();
 		
+		// 1 button
 		else if(arg0.getKeyCode() == KeyEvent.VK_1 || arg0.getKeyCode() == KeyEvent.VK_NUMPAD1)
 			buttons[1].doClick();
 		
+		// 2 button
 		else if(arg0.getKeyCode() == KeyEvent.VK_2 && !arg0.isShiftDown() || arg0.getKeyCode() == KeyEvent.VK_NUMPAD2)
 			buttons[2].doClick();
 		
+		// 3 button
 		else if(arg0.getKeyCode() == KeyEvent.VK_3 || arg0.getKeyCode() == KeyEvent.VK_NUMPAD2)
 			buttons[3].doClick();
 		
+		// 4 button
 		else if(arg0.getKeyCode() == KeyEvent.VK_4 || arg0.getKeyCode() == KeyEvent.VK_NUMPAD4)
 			buttons[4].doClick();
 		
+		// 5 button
 		else if(arg0.getKeyCode() == KeyEvent.VK_5 && !arg0.isShiftDown() || arg0.getKeyCode() == KeyEvent.VK_NUMPAD5)
 			buttons[5].doClick();
 		
+		// 6 button
 		else if(arg0.getKeyCode() == KeyEvent.VK_6 || arg0.getKeyCode() == KeyEvent.VK_NUMPAD6)
 			buttons[6].doClick();
 		
+		// 7 button
 		else if(arg0.getKeyCode() == KeyEvent.VK_7 || arg0.getKeyCode() == KeyEvent.VK_NUMPAD7)
 			buttons[7].doClick();
 		
+		// 8 button
 		else if(arg0.getKeyCode() == KeyEvent.VK_8 && !arg0.isShiftDown() || arg0.getKeyCode() == KeyEvent.VK_NUMPAD8)
 			buttons[8].doClick();
 		
+		// 9 button
 		else if(arg0.getKeyCode() == KeyEvent.VK_9 || arg0.getKeyCode() == KeyEvent.VK_NUMPAD9)
 			buttons[9].doClick();
 		
+		// / button
 		else if(arg0.getKeyCode() == KeyEvent.VK_SLASH)
 			buttons[10].doClick();
 		
+		// * button
 		else if(arg0.getKeyCode() == KeyEvent.VK_8 && arg0.isShiftDown())
 			buttons[11].doClick();
 		
-		else if(arg0.getKeyCode() == KeyEvent.VK_R)
+		// 1/x button
+		else if(arg0.getKeyCode() == KeyEvent.VK_R && !arg0.isControlDown())
 			buttons[12].doClick();
 		
+		// % button
 		else if(arg0.getKeyCode() == KeyEvent.VK_5 && arg0.isShiftDown())
 			buttons[13].doClick();
 		
+		// sqrt button
 		else if(arg0.getKeyCode() == KeyEvent.VK_2 && arg0.isShiftDown())
 			buttons[14].doClick();
 		
+		// - button
 		else if(arg0.getKeyCode() == KeyEvent.VK_MINUS || arg0.getKeyCode() == KeyEvent.VK_SUBTRACT)
 			buttons[15].doClick();
 		
+		// + button
 		else if(arg0.getKeyCode() == KeyEvent.VK_ADD || arg0.getKeyCode() == KeyEvent.VK_EQUALS && arg0.isShiftDown())
 			buttons[16].doClick();
 		
+		// = button
 		else if(arg0.getKeyCode() == KeyEvent.VK_ENTER || arg0.getKeyCode() == KeyEvent.VK_EQUALS && !arg0.isShiftDown())
 			buttons[17].doClick();
 		
+		// . button
 		else if(arg0.getKeyCode() == KeyEvent.VK_PERIOD)
 			buttons[18].doClick();
 		
+		// +/- button
 		else if(arg0.getKeyCode() == KeyEvent.VK_F9)
 			buttons[19].doClick();
 		
+		// MC button
 		else if(arg0.getKeyCode() == KeyEvent.VK_L && arg0.isControlDown())
 			buttons[20].doClick();
 		
+		// MR button
 		else if(arg0.getKeyCode() == KeyEvent.VK_R && arg0.isControlDown())
 			buttons[21].doClick();
 		
+		// MS button
 		else if(arg0.getKeyCode() == KeyEvent.VK_M && arg0.isControlDown())
 			buttons[22].doClick();
 		
+		// MP button
 		else if(arg0.getKeyCode() == KeyEvent.VK_P && arg0.isControlDown())
 			buttons[23].doClick();
 		
+		//Backspace
 		else if(arg0.getKeyCode() == KeyEvent.VK_BACK_SPACE)
 			buttons[24].doClick();
 		
+		// CE button
 		else if(arg0.getKeyCode() == KeyEvent.VK_DELETE)
 			buttons[25].doClick();
-			
+		
+		// C button	
 		else if(arg0.getKeyCode() == KeyEvent.VK_ESCAPE)
 			buttons[26].doClick();
 
 			
 	}
 
+	// Not used
 	public void keyReleased(KeyEvent arg0) {
 		// TODO Auto-generated method stub
 		
 	}
 
-
+	//Not used
 	public void keyTyped(KeyEvent arg0) {
 		// TODO Auto-generated method stub
 		
@@ -557,7 +591,7 @@ public class CalculatorButtonsV01 implements ActionListener, KeyListener {
 	
 	/**
 	 * Resets the number in the screen to the last number pressed.
-	 * @return
+	 * @return 
 	 */
 	public boolean checkReset()
 	{
