@@ -370,7 +370,7 @@ public class CalculatorFunctions {
 	}
 	
 	/**
-	 * Set's the calculator ready to perform a calculation or sets it to receive input.
+	 * Sets the calculator ready to perform a calculation or sets it to receive input.
 	 * @param t true if it's going to be ready, false otherwise. 
 	 */
 	public void setReadyForSecondInput(boolean t)
@@ -379,8 +379,8 @@ public class CalculatorFunctions {
 	}
 	
 	/**
-	 * 
-	 * @return
+	 * Checks if the decimal point has been pressed(to prevent the user to press it again)
+	 * @return true if the dot has been typed, false otherwise.
 	 */
 	public boolean isDotTyped()
 	{
@@ -388,8 +388,8 @@ public class CalculatorFunctions {
 	}
 	
 	/**
-	 * 
-	 * @param t
+	 * Sets the decimal point to pressed(true) or not .
+	 * @param t true if it was typed false otherwise.
 	 */
 	public void setDotTyped(boolean t)
 	{
