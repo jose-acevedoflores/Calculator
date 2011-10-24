@@ -1,6 +1,7 @@
 package project1.calculator;
 
 /**
+ * A class designed to hold all of the functions of a basic calculator.
  * @author 
  *
  */
@@ -15,7 +16,7 @@ public class CalculatorFunctions {
 	private String lastResult="0";
 	private String memory = "0";
 	//Last result temporally  saves the result computed in the previous iteration. If the user clicks equals the firstInput is set to "q" (sentinel value)
-	//
+	
 
 	/**
 	 * Computes the square root of the given number.
@@ -161,6 +162,7 @@ public class CalculatorFunctions {
 			secondInput = currentNumberInDisplay;
 			firstInput = this.compute(firstInput,secondInput);
 		}
+		
 		// If it is then we need to save what's currently in the display to perform an operation
 		// once the second input is available for the compute method to work. 
 		else
