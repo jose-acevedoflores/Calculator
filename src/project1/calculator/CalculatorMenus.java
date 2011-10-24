@@ -22,7 +22,7 @@ public class CalculatorMenus implements ActionListener{
 		
 		edit.add("Copy Ctrl+C");
 		edit.add("Copy Ctrl+V");
-		view.add("I'm having a bad bad day- Despicable me");
+		view.add("Error 404 Not found.");
 		
 		helpTopics.addActionListener(this);
 		help.add(helpTopics);
