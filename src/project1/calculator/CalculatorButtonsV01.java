@@ -324,17 +324,21 @@ public class CalculatorButtonsV01 implements ActionListener, KeyListener {
 		// = button
 		else if(e.getSource() == buttons[17])
 		{
-
+			// If no operator has been pressed then the text field stays the same.	
 			if(calcFunctions.getOperator().equals("0"))
-				txtField.setText(txtField.getText());
+				txtField.setText(txtField.getText()); 
 			
-			
-			else if(calcFunctions.getLastPressedButton().equals("=") ||calcFunctions.getLastPressedButton().equals("sqrt") 
+			// If the last pressed button is the =, sqrt, 1/x, or the first input has not been set
+			//we check some conditions.
+			else if(calcFunctions.getLastPressedButton().equals("=") 
+					||calcFunctions.getLastPressedButton().equals("sqrt") 
 					|| calcFunctions.getFirstInput().equals("q")
 					||calcFunctions.getLastPressedButton().equals("1/x") )
 
 			{
 				double temporary=0;
+				// If we enter here because the last pressed button was any of these then the 
+				// current number in the textField should be passed as second input to the calculator. 
 				if(calcFunctions.getLastPressedButton().equals("sqrt")
 						||calcFunctions.getLastPressedButton().equals("1/x") 
 						||calcFunctions.getLastPressedButton().equals("%") )
