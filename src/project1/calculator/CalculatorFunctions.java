@@ -220,7 +220,8 @@ public class CalculatorFunctions {
 	}
 
 	/**
-	 * 
+	 * Computes the result of the computation as a result of the press of the equal button.
+	 * It performs the computation with the last operator pressed.
 	 * @param fTerm the firstInput. (should be in memory as a result of the press of an operator )
 	 * @param sTerm the secondInput. (should be passed when an operator is pressed)
 	 * @return the result of the computation of the last operator pressed.
@@ -275,7 +276,8 @@ public class CalculatorFunctions {
 	}
 	
 	/**
-	 * @param last
+	 * Set the last result in case the user pressed the equals button repeatedly or the percent button
+	 * @param last the currentNumber in the textField after the pressed of the = button.
 	 */
 	public void setLastResult(String last)
 	{
@@ -283,8 +285,8 @@ public class CalculatorFunctions {
 	}
 	
 	/**
-	 *
-	 * @return
+	 * Gets the firstInput
+	 * @return the firstInput
 	 */
 	public String getFirstInput()
 	{
@@ -300,7 +302,8 @@ public class CalculatorFunctions {
 	}
 	
 	/**
-	 * Method to reset the first input  field
+	 * Method to set the first input  field
+	 * @param value the value to set the firstInput to. 
 	 */
 	public void setFirstInput(String value)
 	{
@@ -308,8 +311,8 @@ public class CalculatorFunctions {
 	}
 	
 	/**
-	 * 
-	 * @return
+	 * Get the secondInput.
+	 * @return the secondInput.
 	 */
 	public String getSecondInput()
 	{
@@ -317,7 +320,8 @@ public class CalculatorFunctions {
 	}
 	
 	/**
-	 * Reseting the second input.
+	 * Setting the second input with the value give.
+	 * @param value the number to set to.
 	 */
 	public void setSecondInput(String value)
 	{
@@ -325,8 +329,8 @@ public class CalculatorFunctions {
 	}
 
 	/**
-	 * 
-	 * @return
+	 * Get the last operator pressed.
+	 * @return the operator.
 	 */
 	public String getOperator()
 	{
@@ -334,7 +338,8 @@ public class CalculatorFunctions {
 	}
 	
 	/**
-	 * Reseting the operator.
+	 * Setting the operator when an operator button is pressed.
+	 * @param op the operator.
 	 */
 	public void setOperator(String op)
 	{
@@ -351,8 +356,9 @@ public class CalculatorFunctions {
 	}
 	
 	/**
-	 * 
-	 * @return
+	 * Check if the calculator is ready for performing an operation.
+	 * @return true if a number, sqrt or inverse button has been pressed.
+	 * false if not.
 	 */
 	public boolean isReadyForSecondInput()
 	{
@@ -360,8 +366,8 @@ public class CalculatorFunctions {
 	}
 	
 	/**
-	 * 
-	 * @param t
+	 * Set's the calculator ready to perform a calculation or sets it to receive input.
+	 * @param t true if it's going to be ready, false otherwise. 
 	 */
 	public void setReadyForSecondInput(boolean t)
 	{
