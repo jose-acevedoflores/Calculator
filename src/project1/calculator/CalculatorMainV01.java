@@ -17,16 +17,10 @@ public class CalculatorMainV01 {
 		
 		CalculatorFunctions f = new CalculatorFunctions();
 		CalculatorButtonsV01 c = new CalculatorButtonsV01(f);
-		
-		MenuBar menuBar = new MenuBar();
-		Menu edit = new Menu("Edit");
-		Menu view = new Menu("View");
-		
-		menuBar.add(edit);
-		menuBar.add(view);
-		
-		frame.setMenuBar(menuBar);
+		CalculatorMenus m = new CalculatorMenus();
+	
 		c.addGUIToFrame(frame);
+		m.addMenus(frame);
 		frame.setVisible(true);
 	}
 
