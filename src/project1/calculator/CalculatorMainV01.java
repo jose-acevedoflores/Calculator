@@ -6,8 +6,17 @@ import java.awt.MenuBar;
 
 import javax.swing.JFrame;
 
+/**
+ * A class designed to run classes CalculatorButtonsV01, CalculatorFunctions, and CalculatorMenus.
+ * @author
+ *
+ */
 public class CalculatorMainV01 {
 
+	/**
+	 * Method that materializes the calculator and its functions.
+	 * @param args not used.
+	 */
 	public static void main(String[] args) {
 		
 		JFrame frame = new JFrame("Calculator");
