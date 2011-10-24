@@ -14,6 +14,7 @@ import javax.swing.JFrame;
 public class CalculatorMainV01 {
 
 	/**
+	 * Method that materializes the calculator and its functions.
 	 * @param args not used.
 	 */
 	public static void main(String[] args) {
