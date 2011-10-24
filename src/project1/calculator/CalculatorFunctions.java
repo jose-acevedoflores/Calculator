@@ -152,11 +152,17 @@ public class CalculatorFunctions {
 	 */
 	public String divPressed(String currentNumberInDisplay )
 	{
-		if(!firstInput.equals("q") && secondInputReady == true )//&& !lastPressedButton.equals("sqrt"))
+		// If the firstInput is not the sentinel value "q" and secondInputReady
+		// is true (it can only be set to true by the press of a button, the sqrt or inverse button)
+		// then we have an input in memory and we compute the result of that and the last operator 
+		// pressed. 
+		if(!firstInput.equals("q") && secondInputReady == true )
 		{
 			secondInput = currentNumberInDisplay;
 			firstInput = this.compute(firstInput,secondInput);
 		}
+		// If it is then we need to save what's currently in the display to perform an operation
+		// once the second input is available for the compute method to work. 
 		else
 			firstInput = currentNumberInDisplay;
 		
@@ -167,8 +173,9 @@ public class CalculatorFunctions {
 	}
 	
 	/**
-	 * 
-	 * @return
+	 * Handles what happens if the dot is pressed.
+	 * @return the dot in the desired position or clear the text field if an operator or the 
+	 *  the equals button was pressed.
 	 */
 	public String dotPressed(String currentNumberInDisplay)
 	{
@@ -192,7 +199,7 @@ public class CalculatorFunctions {
 	/**	
 	 * Computes the percentage of the given number.
 	 * @param num percentage number.
-	 * @return
+	 * @return the percentage 
 	 */
 	public String percent(String num)
 	{
@@ -204,6 +211,8 @@ public class CalculatorFunctions {
 		else if(!firstInput.equals("q"))
 			result = Double.toString((Double.parseDouble(num) / 100) * Double.parseDouble(firstInput));
 		
+		//This handles when the equals button was pressed, since firstInput = "q" the calculator computes the percentage 
+		// of the last result and the current number in the display
 		else if (firstInput.equals("q"))
 			result = Double.toString((Double.parseDouble(num) / 100) * Double.parseDouble(lastResult));
 		
@@ -212,9 +221,9 @@ public class CalculatorFunctions {
 
 	/**
 	 * 
-	 * @param fTerm
-	 * @param sTerm
-	 * @return
+	 * @param fTerm the firstInput. (should be in memory as a result of the press of an operator )
+	 * @param sTerm the secondInput. (should be passed when an operator is pressed)
+	 * @return the result of the computation of the last operator pressed.
 	 */
 	public String compute(String fTerm, String sTerm)
 	{
@@ -249,7 +258,7 @@ public class CalculatorFunctions {
 	}
 	
 	/**
-	 * @param numToAdd
+	 * @param numToAdd 
 	 */
 	public void memoryPlus(String numToAdd)
 	{
@@ -257,7 +266,8 @@ public class CalculatorFunctions {
 	}
 	
 	/**
-	 * @return
+	 * Return the last result  computed when the = button was pressed.
+	 * @return the last result.
 	 */
 	public String getLastResult()
 	{
