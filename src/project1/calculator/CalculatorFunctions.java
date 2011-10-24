@@ -1,5 +1,9 @@
 package project1.calculator;
 
+/**
+ * @author 
+ *
+ */
 public class CalculatorFunctions {
 
 	private String firstInput="q";
@@ -244,6 +248,9 @@ public class CalculatorFunctions {
 		return String.valueOf(result);
 	}
 	
+	/**
+	 * @param numToAdd
+	 */
 	public void memoryPlus(String numToAdd)
 	{
 		memory = Double.toString(Double.parseDouble(memory) + Double.parseDouble(numToAdd));

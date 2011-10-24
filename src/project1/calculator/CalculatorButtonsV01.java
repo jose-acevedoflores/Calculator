@@ -26,6 +26,9 @@ public class CalculatorButtonsV01 implements ActionListener, KeyListener {
 	public CalculatorFunctions calcFunctions;
 	private JLabel memoryLabel; 
 	
+	/**
+	 * @param f
+	 */
 	public CalculatorButtonsV01(CalculatorFunctions f)
 	{
 		calcFunctions = f;
@@ -450,7 +453,10 @@ public class CalculatorButtonsV01 implements ActionListener, KeyListener {
 		
 	}
 
-	//Key listeners implementation
+	
+	/**
+	 * 
+	 */
 	public void keyPressed(KeyEvent arg0) 
 	{
 		
