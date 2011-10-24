@@ -9,6 +9,7 @@ public class CalculatorFunctions {
 	private String lastPressedButton="0";
 	private boolean secondInputReady = false;
 	private String lastResult="0";
+	private String memory = "0";
 	//Last result temporally  saves the result computed in the previous iteration. If the user clicks equals the firstInput is set to "q" (sentinel value)
 	//
 
@@ -162,7 +163,6 @@ public class CalculatorFunctions {
 	}
 	
 	/**
-
 	 * 
 	 * @return
 	 */
@@ -244,11 +244,22 @@ public class CalculatorFunctions {
 		return String.valueOf(result);
 	}
 	
+	public void memoryPlus(String numToAdd)
+	{
+		memory = Double.toString(Double.parseDouble(memory) + Double.parseDouble(numToAdd));
+	}
+	
+	/**
+	 * @return
+	 */
 	public String getLastResult()
 	{
 		return lastResult;
 	}
 	
+	/**
+	 * @param last
+	 */
 	public void setLastResult(String last)
 	{
 		lastResult = last;
@@ -261,6 +272,14 @@ public class CalculatorFunctions {
 	public String getFirstInput()
 	{
 		return firstInput;
+	}
+	
+	/**
+	 * @return
+	 */
+	public String getNumInMemory()
+	{
+		return memory;
 	}
 	
 	/**
@@ -305,6 +324,14 @@ public class CalculatorFunctions {
 		operator = op;
 	}
 	
+
+	/**
+	 * @param numToMemory
+	 */
+	public void setMemoryState(String numToMemory)
+	{
+		memory = numToMemory;
+	}
 	
 	/**
 	 * 
