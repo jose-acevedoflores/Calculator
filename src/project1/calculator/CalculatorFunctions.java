@@ -297,7 +297,7 @@ public class CalculatorFunctions {
 	
 	/**
 	 * It returns the number that it is stored on memory.
-	 * @return memory.
+	 * @return number in memory.
 	 */
 	public String getNumInMemory()
 	{

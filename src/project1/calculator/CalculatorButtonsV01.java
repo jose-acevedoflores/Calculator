@@ -19,6 +19,7 @@ import javax.swing.*;
 import javax.swing.border.BevelBorder;
 
 /**
+ * A class designed to recreate Windows' XP calculator by implementing all of its basic functions. 
  * @author 
  *
  */
@@ -590,8 +591,9 @@ public class CalculatorButtonsV01 implements ActionListener, KeyListener {
 	}
 	
 	/**
-	 * Resets the number in the screen to the last number pressed.
-	 * @return 
+	 * Determines if the screen needs to be reset.
+	 * @return  true if one of +, -, *, ect. operators were pressed.
+	 * false otherwise.
 	 */
 	public boolean checkReset()
 	{
