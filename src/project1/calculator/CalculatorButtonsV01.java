@@ -393,9 +393,11 @@ public class CalculatorButtonsV01 implements ActionListener, KeyListener {
 		// MS button 
 		else if(e.getSource() == buttons[22])
 		{
-			memoryLabel.setText("      M");
-			calcFunctions.setMemoryState(txtField.getText());
-			
+			if(Double.parseDouble(txtField.getText()) != 0)
+			{
+				memoryLabel.setText("      M");
+				calcFunctions.setMemoryState(txtField.getText());
+			}
 		}
 		
 		// M+ button
