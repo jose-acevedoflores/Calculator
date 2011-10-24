@@ -258,7 +258,9 @@ public class CalculatorFunctions {
 	}
 	
 	/**
-	 * @param numToAdd 
+	 * Performs the addition between the number in the screen and the number in the memory.
+	 * It stores the result in memory.
+	 * @param numToAdd the number to be added to the memory.
 	 */
 	public void memoryPlus(String numToAdd)
 	{
@@ -292,7 +294,8 @@ public class CalculatorFunctions {
 	}
 	
 	/**
-	 * @return
+	 * It returns the number that it is stored on memory.
+	 * @return memory.
 	 */
 	public String getNumInMemory()
 	{
@@ -300,7 +303,7 @@ public class CalculatorFunctions {
 	}
 	
 	/**
-	 * Method to reset the first input  field
+	 * Method to reset the first input field
 	 */
 	public void setFirstInput(String value)
 	{
@@ -343,7 +346,8 @@ public class CalculatorFunctions {
 	
 
 	/**
-	 * @param numToMemory
+	 * Sets/resets the memory to the number in screen.
+	 * @param numToMemory the number for which the memory will be set/reset.
 	 */
 	public void setMemoryState(String numToMemory)
 	{
