@@ -1,6 +1,8 @@
 package project1.calculator;
 
 /**
+ * This class gives functionality to the calculator buttons.
+ * It also manages the logic behind the calculator.
  * @author 
  *
  */

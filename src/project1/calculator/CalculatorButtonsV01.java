@@ -33,7 +33,7 @@ public class CalculatorButtonsV01 implements ActionListener, KeyListener {
 	
 	/**
 	 * Creates the buttons used to operate the calculator.
-	 * @param f
+	 * @param f the calculatorFunctions 
 	 */
 	public CalculatorButtonsV01(CalculatorFunctions f)
 	{
