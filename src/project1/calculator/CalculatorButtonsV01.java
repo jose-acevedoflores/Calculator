@@ -324,7 +324,8 @@ public class CalculatorButtonsV01 implements ActionListener, KeyListener {
 		// = button
 		else if(e.getSource() == buttons[17])
 		{
-			// If no operator has been pressed then the text field stays the same.	
+			txtField.setText(calcFunctions.equalsPressed(txtField.getText() ) );
+			/*// If no operator has been pressed then the text field stays the same.	
 			if(calcFunctions.getOperator().equals("0"))
 				txtField.setText(txtField.getText()); 
 			
@@ -373,7 +374,7 @@ public class CalculatorButtonsV01 implements ActionListener, KeyListener {
 				calcFunctions.setReadyForSecondInput(false);
 				calcFunctions.setDotTyped(false);
 			}
-			calcFunctions.setLastPressedButton("=");
+			calcFunctions.setLastPressedButton("=");*/
 		}
 		
 		// . (dot) button
