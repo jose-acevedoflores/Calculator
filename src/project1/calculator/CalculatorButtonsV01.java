@@ -512,11 +512,14 @@ public class CalculatorButtonsV01 implements ActionListener, KeyListener {
 			buttons[9].doClick();
 		
 		// / button
-		else if(arg0.getKeyCode() == KeyEvent.VK_SLASH || arg0.getKeyCode() == KeyEvent.VK_DIVIDE)
+
+		else if(arg0.getKeyCode() == KeyEvent.VK_SLASH || arg0.getKeyCode() == KeyEvent.VK_DIVIDE )
 			buttons[10].doClick();
+		
 		
 		// * button
 		else if(arg0.getKeyCode() == KeyEvent.VK_8 && arg0.isShiftDown() || arg0.getKeyCode() == KeyEvent.VK_MULTIPLY )
+
 			buttons[11].doClick();
 		
 		// 1/x button
