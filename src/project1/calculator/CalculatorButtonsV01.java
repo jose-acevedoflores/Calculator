@@ -401,6 +401,7 @@ public class CalculatorButtonsV01 implements ActionListener, KeyListener {
 		else if(e.getSource() == buttons[21])
 		{
 			txtField.setText(calcFunctions.getNumInMemory());
+			calcFunctions.setLastPressedButton("MR");
 		}
 		
 		// MS button 
@@ -610,7 +611,8 @@ public class CalculatorButtonsV01 implements ActionListener, KeyListener {
 						|| calcFunctions.getLastPressedButton().equals("/")
 						|| calcFunctions.getLastPressedButton().equals("1/x")
 						|| calcFunctions.getLastPressedButton().equals("%")
-						|| calcFunctions.getLastPressedButton().equals("="))
+						|| calcFunctions.getLastPressedButton().equals("=")
+						|| calcFunctions.getLastPressedButton().equals("MR"))
 		tester = true;
 		
 	return tester;

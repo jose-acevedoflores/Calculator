@@ -17,7 +17,7 @@ public class CalculatorFunctions {
 	private boolean secondInputReady = false;
 	private String lastResult="0";
 	private String memory = "0";
-	//Last result temporally  saves the result computed in the previous iteration. If the user clicks equals the firstInput is set to "q" (sentinel value)
+	//Last result temporally saves the result computed in the previous iteration. If the user clicks equals the firstInput is set to "q" (sentinel value)
 	
 
 	/**
