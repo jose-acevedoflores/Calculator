@@ -84,6 +84,7 @@ public class CalculatorButtonsV01 implements ActionListener, KeyListener {
 		memoryLabel.setPreferredSize(new Dimension(60,40));
 		memoryLabel.setMaximumSize(memoryLabel.getPreferredSize());
 		memoryLabel.setBorder(new BevelBorder(BevelBorder.LOWERED));
+		memoryLabel.setText("      ");	
 		clearButtonsRow.add(memoryLabel);
 		clearButtonsRow.add(Box.createRigidArea(new Dimension(10,0)));//Empty area to move the backspace row (align) 
 		clearButtonsRow.add(buttons[24]);
@@ -394,6 +395,7 @@ public class CalculatorButtonsV01 implements ActionListener, KeyListener {
 		else if(e.getSource() == buttons[20])
 		{
 			memoryLabel.setText("      ");
+			calcFunctions.setLastPressedButton("MC");
 			calcFunctions.setMemoryState("0");
 		}
 		
@@ -412,12 +414,16 @@ public class CalculatorButtonsV01 implements ActionListener, KeyListener {
 				memoryLabel.setText("      M");
 				calcFunctions.setMemoryState(txtField.getText());
 			}
+			calcFunctions.setLastPressedButton("MS");
 		}
 		
 		// M+ button
 		else if(e.getSource() == buttons[23])
 		{
 			calcFunctions.memoryPlus(txtField.getText());
+			if(memoryLabel.getText().equals("      ") && Double.parseDouble(txtField.getText()) != 0)
+				memoryLabel.setText("      M");
+			calcFunctions.setLastPressedButton("M+");
 		}
 		
 		//Backspace
@@ -615,7 +621,10 @@ public class CalculatorButtonsV01 implements ActionListener, KeyListener {
 						|| calcFunctions.getLastPressedButton().equals("1/x")
 						|| calcFunctions.getLastPressedButton().equals("%")
 						|| calcFunctions.getLastPressedButton().equals("=")
-						|| calcFunctions.getLastPressedButton().equals("MR"))
+						|| calcFunctions.getLastPressedButton().equals("MR")
+						|| calcFunctions.getLastPressedButton().equals("MS")
+						|| calcFunctions.getLastPressedButton().equals("MC")
+						|| calcFunctions.getLastPressedButton().equals("M+"))
 		tester = true;
 		
 	return tester;
