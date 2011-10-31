@@ -45,7 +45,7 @@ public class CalculatorFunctions {
 	/**
 	 * Multiplies by minus one.
 	 * @param num the number to be multiplied by minus one.
-	 * @return the number multiplied by one.
+	 * @return the number multiplied by minus one.
 	 */
 	public String signChange(String num)
 	{
@@ -156,7 +156,7 @@ public class CalculatorFunctions {
 	public String divPressed(String currentNumberInDisplay )
 	{
 		// If the firstInput is not the sentinel value "q" and secondInputReady
-		// is true (it can only be set to true by the press of a button, the sqrt or inverse button)
+		// is true (it can only be set to true by the press of a number button, the sqrt or inverse button)
 		// then we have an input in memory and we compute the result of that and the last operator 
 		// pressed. 
 		if(!firstInput.equals("q") && secondInputReady == true )
