@@ -234,10 +234,10 @@ public class CalculatorFunctions {
 	{
 		double result=0;
 		
-		if(lastPressedButton.equals("="))
+		/*if(lastPressedButton.equals("="))
 		{
 			fTerm = lastResult;
-		}
+		}*/
 		
 		if(operator.equals("+"))
 		{
@@ -404,6 +404,57 @@ public class CalculatorFunctions {
 	public void setDotTyped(boolean t)
 	{
 		dotTyped = t;
+	}
+	
+	
+	public String equalsPressed(String currentNumberInDisplay)
+	{
+		
+		// If no operator has been pressed then the text field stays the same.	
+		if(operator.equals("0"))
+		{	
+			lastPressedButton = "=";
+			return currentNumberInDisplay;
+		}
+		
+		// If the last pressed button is the =, sqrt, 1/x, or the first input has not been set
+		//we check some conditions.
+		else if(lastPressedButton.equals("=") 
+				|| lastPressedButton.equals("sqrt") 
+				|| firstInput.equals("q")
+				|| lastPressedButton.equals("1/x") )
+
+		{
+		
+			// If we enter here because the last pressed button was any of these then the 
+			// current number in the textField should be passed as second input to the calculator. 
+			if(lastPressedButton.equals("sqrt")
+					||lastPressedButton.equals("1/x") 
+					||lastPressedButton.equals("%") )
+			{
+				secondInput = currentNumberInDisplay;
+			}
+			
+			String result = this.compute(lastResult, secondInput);
+			
+			lastResult = result;
+			lastPressedButton = "=";
+			return result;
+		}
+		//If we enter here then the calculator is ready for normal operation.
+		else 
+		{
+				
+			secondInput= currentNumberInDisplay;
+			this.compute(firstInput, secondInput);
+			lastResult = firstInput;
+			firstInput = "q";
+			secondInputReady = false;
+			dotTyped = false;
+			lastPressedButton = "=";
+			return lastResult;
+		}
+
 	}
 	
 	
