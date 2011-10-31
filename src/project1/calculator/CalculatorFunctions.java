@@ -269,6 +269,12 @@ public class CalculatorFunctions {
 	 */
 	public void memoryPlus(String numToAdd)
 	{
+		if(this.getNumInMemory().equals("0"))
+		{//Do nothing
+			
+		}
+		
+		else
 		memory = Double.toString(Double.parseDouble(memory) + Double.parseDouble(numToAdd));
 	}
 	

@@ -1,17 +1,15 @@
 package project1.calculator;
 
 
-import java.awt.BorderLayout;
-import java.awt.Color;
+
 import java.awt.Dimension;
 import java.awt.FlowLayout;
 import javax.swing.BoxLayout;
 import javax.swing.JPanel;
 
-import java.awt.GridLayout;
+
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.awt.event.InputEvent;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 
@@ -331,9 +329,9 @@ public class CalculatorButtonsV01 implements ActionListener, KeyListener {
 			// If the last pressed button is the =, sqrt, 1/x, or the first input has not been set
 			//we check some conditions.
 			else if(calcFunctions.getLastPressedButton().equals("=") 
-					||calcFunctions.getLastPressedButton().equals("sqrt") 
+					|| calcFunctions.getLastPressedButton().equals("sqrt") 
 					|| calcFunctions.getFirstInput().equals("q")
-					||calcFunctions.getLastPressedButton().equals("1/x") )
+					|| calcFunctions.getLastPressedButton().equals("1/x") )
 
 			{
 				double temporary=0;
@@ -596,7 +594,7 @@ public class CalculatorButtonsV01 implements ActionListener, KeyListener {
 	
 	/**
 	 * Determines if the screen needs to be reset.
-	 * @return  true if one of +, -, *, ect. operators were pressed.
+	 * @return  true if one of +, -, *, etc. operators were pressed.
 	 * false otherwise.
 	 */
 	public boolean checkReset()
