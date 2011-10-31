@@ -1,8 +1,6 @@
 package project1.calculator;
 
 import java.awt.Dimension;
-import java.awt.Menu;
-import java.awt.MenuBar;
 
 import javax.swing.JFrame;
 

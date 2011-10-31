@@ -1,17 +1,15 @@
 package project1.calculator;
 
 
-import java.awt.BorderLayout;
-import java.awt.Color;
+
 import java.awt.Dimension;
 import java.awt.FlowLayout;
 import javax.swing.BoxLayout;
 import javax.swing.JPanel;
 
-import java.awt.GridLayout;
+
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.awt.event.InputEvent;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 
@@ -324,16 +322,17 @@ public class CalculatorButtonsV01 implements ActionListener, KeyListener {
 		// = button
 		else if(e.getSource() == buttons[17])
 		{
-			// If no operator has been pressed then the text field stays the same.	
+			txtField.setText(calcFunctions.equalsPressed(txtField.getText() ) );
+			/*// If no operator has been pressed then the text field stays the same.	
 			if(calcFunctions.getOperator().equals("0"))
 				txtField.setText(txtField.getText()); 
 			
 			// If the last pressed button is the =, sqrt, 1/x, or the first input has not been set
 			//we check some conditions.
 			else if(calcFunctions.getLastPressedButton().equals("=") 
-					||calcFunctions.getLastPressedButton().equals("sqrt") 
+					|| calcFunctions.getLastPressedButton().equals("sqrt") 
 					|| calcFunctions.getFirstInput().equals("q")
-					||calcFunctions.getLastPressedButton().equals("1/x") )
+					|| calcFunctions.getLastPressedButton().equals("1/x") )
 
 			{
 				double temporary=0;
@@ -361,7 +360,7 @@ public class CalculatorButtonsV01 implements ActionListener, KeyListener {
 				calcFunctions.setLastResult(String.valueOf(temporary)) ;
 				txtField.setText(calcFunctions.getLastResult());
 			}
-			
+			//If we enter here then the calculator is ready for normal operation.
 			else 
 			{
 					
@@ -373,7 +372,7 @@ public class CalculatorButtonsV01 implements ActionListener, KeyListener {
 				calcFunctions.setReadyForSecondInput(false);
 				calcFunctions.setDotTyped(false);
 			}
-			calcFunctions.setLastPressedButton("=");
+			calcFunctions.setLastPressedButton("=");*/
 		}
 		
 		// . (dot) button
@@ -512,11 +511,14 @@ public class CalculatorButtonsV01 implements ActionListener, KeyListener {
 			buttons[9].doClick();
 		
 		// / button
+
 		else if(arg0.getKeyCode() == KeyEvent.VK_SLASH || arg0.getKeyCode() == KeyEvent.VK_DIVIDE )
 			buttons[10].doClick();
 		
+		
 		// * button
-		else if((arg0.getKeyCode() == KeyEvent.VK_8 && arg0.isShiftDown()) || arg0.getKeyCode()== KeyEvent.VK_MULTIPLY)
+		else if(arg0.getKeyCode() == KeyEvent.VK_8 && arg0.isShiftDown() || arg0.getKeyCode() == KeyEvent.VK_MULTIPLY )
+
 			buttons[11].doClick();
 		
 		// 1/x button
@@ -596,7 +598,7 @@ public class CalculatorButtonsV01 implements ActionListener, KeyListener {
 	
 	/**
 	 * Determines if the screen needs to be reset.
-	 * @return  true if one of +, -, *, ect. operators were pressed.
+	 * @return  true if one of +, -, *, etc. operators were pressed.
 	 * false otherwise.
 	 */
 	public boolean checkReset()
