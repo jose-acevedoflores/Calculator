@@ -305,6 +305,7 @@ public class CalculatorFunctions {
 	 */
 	public String getNumInMemory()
 	{
+		secondInputReady = true;
 		return memory;
 	}
 	
