@@ -6,10 +6,10 @@ import javax.swing.JFrame;
 
 import org.junit.Test;
 
-public class CalculatorButtonsV01Test {
+public class CalculatorButtonsTest {
 
 	CalculatorFunctions f = new CalculatorFunctions();
-	CalculatorButtonsV01 c = new CalculatorButtonsV01(f);
+	CalculatorButtons c = new CalculatorButtons(f);
 	JFrame frameTest = new JFrame();
 	
 	@Test

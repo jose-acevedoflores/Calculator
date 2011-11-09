@@ -21,7 +21,7 @@ import javax.swing.border.BevelBorder;
  * @author 
  *
  */
-public class CalculatorButtonsV01 implements ActionListener, KeyListener {
+public class CalculatorButtons implements ActionListener, KeyListener {
 	
 	//Public for testing
 	public JButton[] buttons = new JButton[27];
@@ -33,7 +33,7 @@ public class CalculatorButtonsV01 implements ActionListener, KeyListener {
 	 * Creates the buttons used to operate the calculator.
 	 * @param f the calculatorFunctions 
 	 */
-	public CalculatorButtonsV01(CalculatorFunctions f)
+	public CalculatorButtons(CalculatorFunctions f)
 	{
 		calcFunctions = f;
 		for(int i = 0 ; i < 10; i++)

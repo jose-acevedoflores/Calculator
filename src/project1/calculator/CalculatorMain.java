@@ -9,7 +9,7 @@ import javax.swing.JFrame;
  * @author
  *
  */
-public class CalculatorMainV01 {
+public class CalculatorMain {
 
 	/**
 	 * Method that materializes the calculator and its functions.
@@ -23,7 +23,7 @@ public class CalculatorMainV01 {
 		frame.setResizable(false);
 		
 		CalculatorFunctions f = new CalculatorFunctions();
-		CalculatorButtonsV01 c = new CalculatorButtonsV01(f);
+		CalculatorButtons c = new CalculatorButtons(f);
 		CalculatorMenus m = new CalculatorMenus();
 	
 		c.addGUIToFrame(frame);
