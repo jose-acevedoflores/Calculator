@@ -324,56 +324,7 @@ public class CalculatorButtons implements ActionListener, KeyListener {
 		else if(e.getSource() == buttons[17])
 		{
 			txtField.setText(calcFunctions.equalsPressed(txtField.getText() ) );
-			/*// If no operator has been pressed then the text field stays the same.	
-			if(calcFunctions.getOperator().equals("0"))
-				txtField.setText(txtField.getText()); 
 			
-			// If the last pressed button is the =, sqrt, 1/x, or the first input has not been set
-			//we check some conditions.
-			else if(calcFunctions.getLastPressedButton().equals("=") 
-					|| calcFunctions.getLastPressedButton().equals("sqrt") 
-					|| calcFunctions.getFirstInput().equals("q")
-					|| calcFunctions.getLastPressedButton().equals("1/x") )
-
-			{
-				double temporary=0;
-				// If we enter here because the last pressed button was any of these then the 
-				// current number in the textField should be passed as second input to the calculator. 
-				if(calcFunctions.getLastPressedButton().equals("sqrt")
-						||calcFunctions.getLastPressedButton().equals("1/x") 
-						||calcFunctions.getLastPressedButton().equals("%") )
-				{
-					calcFunctions.setSecondInput(txtField.getText());
-				}
-				
-				if(calcFunctions.getOperator().equals("+"))
-					temporary = Double.parseDouble(calcFunctions.getLastResult()) + Double.parseDouble(calcFunctions.getSecondInput());
-				
-				else if(calcFunctions.getOperator().equals("-"))
-					temporary = Double.parseDouble(calcFunctions.getLastResult()) - Double.parseDouble(calcFunctions.getSecondInput());
-				
-				else if(calcFunctions.getOperator().equals("*"))
-					temporary = Double.parseDouble(calcFunctions.getLastResult()) * Double.parseDouble(calcFunctions.getSecondInput());
-				
-				else if(calcFunctions.getOperator().equals("/"))
-					temporary = Double.parseDouble(calcFunctions.getLastResult()) / Double.parseDouble(calcFunctions.getSecondInput());
-				
-				calcFunctions.setLastResult(String.valueOf(temporary)) ;
-				txtField.setText(calcFunctions.getLastResult());
-			}
-			//If we enter here then the calculator is ready for normal operation.
-			else 
-			{
-					
-				calcFunctions.setSecondInput(txtField.getText() );
-				calcFunctions.compute(calcFunctions.getFirstInput(), calcFunctions.getSecondInput() );
-				calcFunctions.setLastResult(calcFunctions.getFirstInput());
-				calcFunctions.setFirstInput("q");
-				txtField.setText(calcFunctions.getLastResult());
-				calcFunctions.setReadyForSecondInput(false);
-				calcFunctions.setDotTyped(false);
-			}
-			calcFunctions.setLastPressedButton("=");*/
 		}
 		
 		// . (dot) button
