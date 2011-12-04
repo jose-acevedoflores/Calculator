@@ -280,7 +280,7 @@ public class CalculatorButtons implements ActionListener, KeyListener {
 		{
 			calcFunctions.setLastPressedButton("1/x");
 			if(txtField.getText().equals("0"))
-				txtField.setText("0");
+				txtField.setText("Cannot Divide by Zero");
 			else if(txtField.getText().length() != 0)
 				txtField.setText(calcFunctions.inverse(txtField.getText()));
 		}
