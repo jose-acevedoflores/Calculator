@@ -7,7 +7,7 @@ public class TestRunner {
 	public static void main(String args[])
 	{
 		CalculatorFunctions f = new CalculatorFunctions();
-		CalculatorButtonsV01 c = new CalculatorButtonsV01(f);
+		CalculatorButtons c = new CalculatorButtons(f);
 		
 		JFrame frameTest = new JFrame();
 		c.addGUIToFrame(frameTest);
