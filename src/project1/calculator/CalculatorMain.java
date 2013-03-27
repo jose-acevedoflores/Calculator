@@ -28,6 +28,7 @@ public class CalculatorMain {
 	
 		c.addGUIToFrame(frame);
 		m.addMenus(frame);
+		frame.setLocationRelativeTo(null);
 		frame.setVisible(true);
 	}
 
