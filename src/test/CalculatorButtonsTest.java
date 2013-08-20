@@ -1,10 +1,13 @@
-package project1.calculator;
+package test;
 
 import static org.junit.Assert.*;
 
 import javax.swing.JFrame;
 
 import org.junit.Test;
+
+import project1.calculator.CalculatorButtons;
+import project1.calculator.CalculatorFunctions;
 
 public class CalculatorButtonsTest {
 

@@ -1,6 +1,9 @@
-package project1.calculator;
+package test;
 
 import javax.swing.JFrame;
+
+import project1.calculator.CalculatorButtons;
+import project1.calculator.CalculatorFunctions;
 
 public class TestRunner {
 	
